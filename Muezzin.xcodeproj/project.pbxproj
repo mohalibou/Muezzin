@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		55C172CB2A8D2D1D0022367E /* MButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C172CA2A8D2D1D0022367E /* MButtonStyle.swift */; };
+		55CE8E3529F9E8C1001948D6 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE8E3429F9E8C1001948D6 /* AppSettings.swift */; };
+		55CE8E3829F9F1CA001948D6 /* CalculationMethod+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE8E3729F9F1CA001948D6 /* CalculationMethod+Ext.swift */; };
+		55CE8E3A29FB4035001948D6 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE8E3929FB4035001948D6 /* SwiftUIView.swift */; };
+		55CE8E3C29FC8C02001948D6 /* MuezzinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE8E3B29FC8C02001948D6 /* MuezzinViewModel.swift */; };
+		55F8BD3529EDA3F9009D0D4D /* MuezzinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8BD3429EDA3F9009D0D4D /* MuezzinApp.swift */; };
+		55F8BD3729EDA3F9009D0D4D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8BD3629EDA3F9009D0D4D /* SettingsView.swift */; };
+		55F8BD3929EDA3FA009D0D4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F8BD3829EDA3FA009D0D4D /* Assets.xcassets */; };
+		55F8BD3C29EDA3FA009D0D4D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F8BD3B29EDA3FA009D0D4D /* Preview Assets.xcassets */; };
+		55F8BD4429F0A996009D0D4D /* MuezzinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8BD4329F0A996009D0D4D /* MuezzinView.swift */; };
+		55F8BD4629F0A9C1009D0D4D /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8BD4529F0A9C1009D0D4D /* DateView.swift */; };
+		55F8BD4829F0A9D3009D0D4D /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8BD4729F0A9D3009D0D4D /* ButtonsView.swift */; };
+		55F8BD4A29F0A9F1009D0D4D /* PrayerTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8BD4929F0A9F1009D0D4D /* PrayerTimesView.swift */; };
+		55F8BD4C29F0AA76009D0D4D /* PrayerTimesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8BD4B29F0AA76009D0D4D /* PrayerTimesCell.swift */; };
+		55F8BD4E29F0AADD009D0D4D /* MButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8BD4D29F0AADD009D0D4D /* MButton.swift */; };
+		55F8BD7729F3235D009D0D4D /* Adhan in Frameworks */ = {isa = PBXBuildFile; productRef = 55F8BD7629F3235D009D0D4D /* Adhan */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		55C172CA2A8D2D1D0022367E /* MButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MButtonStyle.swift; sourceTree = "<group>"; };
+		55CE8E3429F9E8C1001948D6 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		55CE8E3729F9F1CA001948D6 /* CalculationMethod+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalculationMethod+Ext.swift"; sourceTree = "<group>"; };
+		55CE8E3929FB4035001948D6 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		55CE8E3B29FC8C02001948D6 /* MuezzinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuezzinViewModel.swift; sourceTree = "<group>"; };
+		55F8BD3129EDA3F9009D0D4D /* Muezzin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muezzin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55F8BD3429EDA3F9009D0D4D /* MuezzinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuezzinApp.swift; sourceTree = "<group>"; };
+		55F8BD3629EDA3F9009D0D4D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		55F8BD3829EDA3FA009D0D4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55F8BD3B29EDA3FA009D0D4D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		55F8BD3D29EDA3FA009D0D4D /* Muezzin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Muezzin.entitlements; sourceTree = "<group>"; };
+		55F8BD4329F0A996009D0D4D /* MuezzinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuezzinView.swift; sourceTree = "<group>"; };
+		55F8BD4529F0A9C1009D0D4D /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		55F8BD4729F0A9D3009D0D4D /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
+		55F8BD4929F0A9F1009D0D4D /* PrayerTimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimesView.swift; sourceTree = "<group>"; };
+		55F8BD4B29F0AA76009D0D4D /* PrayerTimesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimesCell.swift; sourceTree = "<group>"; };
+		55F8BD4D29F0AADD009D0D4D /* MButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MButton.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55F8BD2E29EDA3F9009D0D4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55F8BD7729F3235D009D0D4D /* Adhan in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		55C172C92A8D2D040022367E /* ButtonStyles */ = {
+			isa = PBXGroup;
+			children = (
+				55C172CA2A8D2D1D0022367E /* MButtonStyle.swift */,
+			);
+			path = ButtonStyles;
+			sourceTree = "<group>";
+		};
+		55CE8E3629F9F1B4001948D6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				55CE8E3729F9F1CA001948D6 /* CalculationMethod+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		55F8BD2829EDA3F9009D0D4D = {
+			isa = PBXGroup;
+			children = (
+				55F8BD3329EDA3F9009D0D4D /* Muezzin */,
+				55F8BD3229EDA3F9009D0D4D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		55F8BD3229EDA3F9009D0D4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55F8BD3129EDA3F9009D0D4D /* Muezzin.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55F8BD3329EDA3F9009D0D4D /* Muezzin */ = {
+			isa = PBXGroup;
+			children = (
+				55C172C92A8D2D040022367E /* ButtonStyles */,
+				55CE8E3629F9F1B4001948D6 /* Extensions */,
+				55F8BD3429EDA3F9009D0D4D /* MuezzinApp.swift */,
+				55CE8E3429F9E8C1001948D6 /* AppSettings.swift */,
+				55F8BD4329F0A996009D0D4D /* MuezzinView.swift */,
+				55CE8E3B29FC8C02001948D6 /* MuezzinViewModel.swift */,
+				55F8BD4529F0A9C1009D0D4D /* DateView.swift */,
+				55F8BD4729F0A9D3009D0D4D /* ButtonsView.swift */,
+				55F8BD4929F0A9F1009D0D4D /* PrayerTimesView.swift */,
+				55F8BD4B29F0AA76009D0D4D /* PrayerTimesCell.swift */,
+				55F8BD4D29F0AADD009D0D4D /* MButton.swift */,
+				55F8BD3629EDA3F9009D0D4D /* SettingsView.swift */,
+				55CE8E3929FB4035001948D6 /* SwiftUIView.swift */,
+				55F8BD3829EDA3FA009D0D4D /* Assets.xcassets */,
+				55F8BD3D29EDA3FA009D0D4D /* Muezzin.entitlements */,
+				55F8BD3A29EDA3FA009D0D4D /* Preview Content */,
+			);
+			path = Muezzin;
+			sourceTree = "<group>";
+		};
+		55F8BD3A29EDA3FA009D0D4D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				55F8BD3B29EDA3FA009D0D4D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		55F8BD3029EDA3F9009D0D4D /* Muezzin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55F8BD4029EDA3FA009D0D4D /* Build configuration list for PBXNativeTarget "Muezzin" */;
+			buildPhases = (
+				55F8BD2D29EDA3F9009D0D4D /* Sources */,
+				55F8BD2E29EDA3F9009D0D4D /* Frameworks */,
+				55F8BD2F29EDA3F9009D0D4D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Muezzin;
+			packageProductDependencies = (
+				55F8BD7629F3235D009D0D4D /* Adhan */,
+			);
+			productName = Muezzin;
+			productReference = 55F8BD3129EDA3F9009D0D4D /* Muezzin.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		55F8BD2929EDA3F9009D0D4D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					55F8BD3029EDA3F9009D0D4D = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = 55F8BD2C29EDA3F9009D0D4D /* Build configuration list for PBXProject "Muezzin" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 55F8BD2829EDA3F9009D0D4D;
+			packageReferences = (
+				55F8BD7529F3235D009D0D4D /* XCRemoteSwiftPackageReference "adhan-swift" */,
+			);
+			productRefGroup = 55F8BD3229EDA3F9009D0D4D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55F8BD3029EDA3F9009D0D4D /* Muezzin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55F8BD2F29EDA3F9009D0D4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55F8BD3C29EDA3FA009D0D4D /* Preview Assets.xcassets in Resources */,
+				55F8BD3929EDA3FA009D0D4D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55F8BD2D29EDA3F9009D0D4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55CE8E3829F9F1CA001948D6 /* CalculationMethod+Ext.swift in Sources */,
+				55F8BD4A29F0A9F1009D0D4D /* PrayerTimesView.swift in Sources */,
+				55CE8E3A29FB4035001948D6 /* SwiftUIView.swift in Sources */,
+				55CE8E3C29FC8C02001948D6 /* MuezzinViewModel.swift in Sources */,
+				55F8BD4E29F0AADD009D0D4D /* MButton.swift in Sources */,
+				55F8BD4429F0A996009D0D4D /* MuezzinView.swift in Sources */,
+				55F8BD4829F0A9D3009D0D4D /* ButtonsView.swift in Sources */,
+				55C172CB2A8D2D1D0022367E /* MButtonStyle.swift in Sources */,
+				55F8BD3729EDA3F9009D0D4D /* SettingsView.swift in Sources */,
+				55F8BD4629F0A9C1009D0D4D /* DateView.swift in Sources */,
+				55CE8E3529F9E8C1001948D6 /* AppSettings.swift in Sources */,
+				55F8BD3529EDA3F9009D0D4D /* MuezzinApp.swift in Sources */,
+				55F8BD4C29F0AA76009D0D4D /* PrayerTimesCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		55F8BD3E29EDA3FA009D0D4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		55F8BD3F29EDA3FA009D0D4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		55F8BD4129EDA3FA009D0D4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Muezzin/Muezzin.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Muezzin/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mohalibou.Muezzin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		55F8BD4229EDA3FA009D0D4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Muezzin/Muezzin.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Muezzin/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mohalibou.Muezzin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55F8BD2C29EDA3F9009D0D4D /* Build configuration list for PBXProject "Muezzin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55F8BD3E29EDA3FA009D0D4D /* Debug */,
+				55F8BD3F29EDA3FA009D0D4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55F8BD4029EDA3FA009D0D4D /* Build configuration list for PBXNativeTarget "Muezzin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55F8BD4129EDA3FA009D0D4D /* Debug */,
+				55F8BD4229EDA3FA009D0D4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		55F8BD7529F3235D009D0D4D /* XCRemoteSwiftPackageReference "adhan-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/batoulapps/adhan-swift";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		55F8BD7629F3235D009D0D4D /* Adhan */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55F8BD7529F3235D009D0D4D /* XCRemoteSwiftPackageReference "adhan-swift" */;
+			productName = Adhan;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 55F8BD2929EDA3F9009D0D4D /* Project object */;
+}
