@@ -9,22 +9,24 @@ import SwiftUI
 
 struct DateView: View {
     let cal: Calendar
-    
+    @State private var currentDate = Date()
+    private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+
     init() {
         var calendar = Calendar(identifier: .islamicUmmAlQura)
         calendar.timeZone = TimeZone(identifier: "America/Los_Angeles")! // Replace with your desired time zone identifier
         self.cal = calendar
     }
-    
+
     var islamicDate: (day: Int, month: String, year: String) {
-        let date = cal.dateComponents([.year, .month, .day], from: Date())
+        let date = cal.dateComponents([.year, .month, .day], from: currentDate)
         let islamicYear = String(date.year ?? 0).replacingOccurrences(of: ",", with: "")
         let islamicMonthNumber = date.month ?? 0
         let islamicDay = date.day ?? 0
         let islamicMonth = cal.monthSymbols[islamicMonthNumber - 1]
         return (day: islamicDay, month: islamicMonth, year: islamicYear)
     }
-    
+
     var body: some View {
         HStack {
             Text("\(islamicDate.day)")
@@ -40,6 +42,9 @@ struct DateView: View {
         }
         .padding(6)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .onReceive(timer) { _ in
+            self.currentDate = Date()
+        }
     }
 }
 
