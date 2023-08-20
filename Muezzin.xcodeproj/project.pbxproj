@@ -17,6 +17,8 @@
 		55C172DB2A8F25670022367E /* SettingsPrayerTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C172DA2A8F25670022367E /* SettingsPrayerTimesView.swift */; };
 		55C172DF2A8F26250022367E /* SettingsAdvancedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C172DE2A8F26250022367E /* SettingsAdvancedView.swift */; };
 		55C172E12A8F27220022367E /* SettingsNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C172E02A8F27220022367E /* SettingsNotificationsView.swift */; };
+		55C172E72A8F30B20022367E /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = 55C172E62A8F30B20022367E /* SwiftUIIntrospect */; };
+		55C172E92A91B4F90022367E /* dua.aif in Resources */ = {isa = PBXBuildFile; fileRef = 55C172E82A91B4F80022367E /* dua.aif */; };
 		55CE8E3529F9E8C1001948D6 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE8E3429F9E8C1001948D6 /* AppSettings.swift */; };
 		55CE8E3829F9F1CA001948D6 /* CalculationMethod+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE8E3729F9F1CA001948D6 /* CalculationMethod+Ext.swift */; };
 		55CE8E3A29FB4035001948D6 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE8E3929FB4035001948D6 /* SwiftUIView.swift */; };
@@ -45,6 +47,7 @@
 		55C172DA2A8F25670022367E /* SettingsPrayerTimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPrayerTimesView.swift; sourceTree = "<group>"; };
 		55C172DE2A8F26250022367E /* SettingsAdvancedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAdvancedView.swift; sourceTree = "<group>"; };
 		55C172E02A8F27220022367E /* SettingsNotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNotificationsView.swift; sourceTree = "<group>"; };
+		55C172E82A91B4F80022367E /* dua.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = dua.aif; sourceTree = "<group>"; };
 		55CE8E3429F9E8C1001948D6 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		55CE8E3729F9F1CA001948D6 /* CalculationMethod+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalculationMethod+Ext.swift"; sourceTree = "<group>"; };
 		55CE8E3929FB4035001948D6 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
@@ -69,6 +72,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55F8BD7729F3235D009D0D4D /* Adhan in Frameworks */,
+				55C172E72A8F30B20022367E /* SwiftUIIntrospect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +90,7 @@
 		55C172CC2A8D49240022367E /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				55C172E82A91B4F80022367E /* dua.aif */,
 				55C172CD2A8D493E0022367E /* athan1_fajr.mp3 */,
 				55C172CE2A8D493E0022367E /* athan1.mp3 */,
 				55C172D32A8EC3040022367E /* dua.m4a */,
@@ -181,6 +186,7 @@
 			name = Muezzin;
 			packageProductDependencies = (
 				55F8BD7629F3235D009D0D4D /* Adhan */,
+				55C172E62A8F30B20022367E /* SwiftUIIntrospect */,
 			);
 			productName = Muezzin;
 			productReference = 55F8BD3129EDA3F9009D0D4D /* Muezzin.app */;
@@ -212,6 +218,7 @@
 			mainGroup = 55F8BD2829EDA3F9009D0D4D;
 			packageReferences = (
 				55F8BD7529F3235D009D0D4D /* XCRemoteSwiftPackageReference "adhan-swift" */,
+				55C172E52A8F30B20022367E /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = 55F8BD3229EDA3F9009D0D4D /* Products */;
 			projectDirPath = "";
@@ -230,6 +237,7 @@
 				55F8BD3C29EDA3FA009D0D4D /* Preview Assets.xcassets in Resources */,
 				55C172D02A8D493E0022367E /* athan1.mp3 in Resources */,
 				55F8BD3929EDA3FA009D0D4D /* Assets.xcassets in Resources */,
+				55C172E92A91B4F90022367E /* dua.aif in Resources */,
 				55C172CF2A8D493E0022367E /* athan1_fajr.mp3 in Resources */,
 				55C172D42A8EC3040022367E /* dua.m4a in Resources */,
 			);
@@ -470,6 +478,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		55C172E52A8F30B20022367E /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.11.0;
+			};
+		};
 		55F8BD7529F3235D009D0D4D /* XCRemoteSwiftPackageReference "adhan-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/batoulapps/adhan-swift";
@@ -481,6 +497,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		55C172E62A8F30B20022367E /* SwiftUIIntrospect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55C172E52A8F30B20022367E /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = SwiftUIIntrospect;
+		};
 		55F8BD7629F3235D009D0D4D /* Adhan */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 55F8BD7529F3235D009D0D4D /* XCRemoteSwiftPackageReference "adhan-swift" */;

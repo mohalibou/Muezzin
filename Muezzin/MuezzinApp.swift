@@ -5,6 +5,7 @@
 //  Created by Mohamed Ali Boutaleb on 4/17/23.
 //
 
+import SwiftUIIntrospect
 import SwiftUI
 
 @main
@@ -45,7 +46,9 @@ struct MuezzinApp: App {
         
         Settings {
             SettingsView()
+
         }
+        
         
         Window("", id: "about") {
             VStack {
