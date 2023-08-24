@@ -26,7 +26,7 @@ struct SettingsView: View {
             SettingsAdvancedView()
                 .tabItem { Label("Advanced", systemImage: "wrench.and.screwdriver.fill") }
         }
-        .frame(width: 400, height: 400)
+        .frame(width: 400, height: 450)
     }
 }
 

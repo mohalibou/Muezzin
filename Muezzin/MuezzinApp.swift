@@ -15,45 +15,19 @@ struct MuezzinApp: App {
             MuezzinView()
                 .padding(12)
         } label: {
-            HStack {
-                let configuration = NSImage.SymbolConfiguration(pointSize: 16, weight: .light)
-                    .applying(.init(hierarchicalColor: .red))
-                
-                let image = NSImage(systemSymbolName: "moon.stars.fill", accessibilityDescription: nil)
-                let updateImage = image?.withSymbolConfiguration(configuration)
-                
-                let font = NSFont.systemFont(ofSize: 16, weight: .light)
-                let color = NSColor.red
-                let attributes: [NSAttributedString.Key: Any] = [
-                    .font: font,
-                    .foregroundColor: color
-                ]
-
-                let attributedString = NSAttributedString(string: "Hello, world!", attributes: attributes)
-                
-
-                Image(nsImage: updateImage!)
-                Text(AttributedString(attributedString))
-                
-                /*
-                 Image(systemName: "moon.stars.fill")
-                 Text(" Muezzin")
-                 */
-            }
-            
+            Label("Hello", systemImage: "person")
+                .labelStyle(.titleAndIcon)
         }
         .menuBarExtraStyle(.window)
         
         Settings {
             SettingsView()
-
         }
         
         
         Window("", id: "about") {
             VStack {
                 Text("Hello")
-                
             }
             .frame(width: 284, height: 100)
             .onReceive(NotificationCenter.default.publisher(for: NSApplication.willUpdateNotification), perform: { _ in
@@ -62,8 +36,30 @@ struct MuezzinApp: App {
                     window.standardWindowButton(.zoomButton)?.isEnabled = false
                 }
             })
-            
         }
         .windowResizability(.contentSize)
     }
 }
+
+/*
+HStack {
+    let configuration = NSImage.SymbolConfiguration(pointSize: 16, weight: .light)
+        .applying(.init(hierarchicalColor: .red))
+    
+    let image = NSImage(systemSymbolName: "moon.stars.fill", accessibilityDescription: nil)!
+        .withSymbolConfiguration(configuration)
+    
+    let attributedText = NSAttributedString(string: "Muezzin", attributes: [.foregroundColor: Color.green])
+    
+    let myString = " Fajr 4:54"
+    let myAttribute = [ NSAttributedString.Key.foregroundColor: NSColor.blue ]
+    let myAttrString = NSAttributedString(string: myString, attributes: myAttribute)
+    
+    Label {
+        Text(AttributedString(myAttrString)).foregroundStyle(.red, .green)
+    } icon: {
+        Image(nsImage: image!)
+    }
+    .labelStyle(.titleAndIcon)
+
+}*/

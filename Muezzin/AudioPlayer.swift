@@ -10,11 +10,14 @@ import SwiftUI
 
 class AudioPlayer: NSObject, ObservableObject {
     private var player: AVAudioPlayer?
-    var audio: String?
+    @Published var audio: String? {
+        didSet {
+            setupPlayer()
+        }
+    }
     @Published var isPlaying: Bool = false
     
-    override init() {
-        super.init()
+    func setupPlayer() {
         if let path = Bundle.main.path(forResource: audio, ofType: "mp3") {
             let url = URL(fileURLWithPath: path)
             do {

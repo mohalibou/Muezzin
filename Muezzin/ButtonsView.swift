@@ -10,6 +10,7 @@ import SwiftUI
 struct ButtonsView: View {
     
     @Environment(\.openWindow) var openWindow
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         VStack {
@@ -19,7 +20,7 @@ struct ButtonsView: View {
             }
             HStack {
                 MButton(icon: "info.circle") { NSApp.activate(ignoringOtherApps: true); openWindow(id: "about") }
-                MButton(icon: "location.fill") { print("You pressed the Location button.") }
+                MButton(icon: "power") { NSApplication.shared.terminate(self) }
             }
         }
         .frame(maxWidth: 83, maxHeight: .infinity)
