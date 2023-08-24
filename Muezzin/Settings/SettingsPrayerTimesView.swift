@@ -10,21 +10,31 @@ import SwiftUI
 
 struct SettingsPrayerTimesView: View {
     
-    @State private var selectedMadhab: Madhab = .shafi
-    @State private var selectedCalculation: CalculationMethod = .moonsightingCommittee
+    @StateObject private var settings = AppSettings.shared
+    
+    @State private var flag1 = false
+    @State private var flag2 = false
+    @State private var flag3 = false
     
     var body: some View {
         Form {
-            Picker("Calculation Method", selection: $selectedCalculation) {
-                ForEach(CalculationMethod.usefulCases(), id: \.self) { calcMethod in
-                    Text(calcMethod.localizedString())
+            Section {
+                Picker("Calculation Method", selection: settings.$calculationMethod) {
+                    ForEach(CalculationMethod.usefulCases(), id: \.self) { calcMethod in
+                        Text(calcMethod.localizedString())
+                    }
+                }
+                
+                Picker("Asr Calculation", selection: settings.$asrCalculation) {
+                    Text("Standard").tag(Madhab.shafi)
+                    Text("Hanafi").tag(Madhab.hanafi)
                 }
             }
             
-            Picker("Asr Calculation", selection: $selectedMadhab) {
-                ForEach(Madhab.allCases, id: \.self) { madhab in
-                    Text(madhab == .shafi ? "Standard" : "Hanafi")
-                }
+            Section {
+                Toggle("Show sunrise time", isOn: $flag1)
+                Toggle("Show midnight time", isOn: $flag2)
+                Toggle("Show tahajjud time", isOn: $flag3)
             }
         }
         .formStyle(.grouped)

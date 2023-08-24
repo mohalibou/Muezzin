@@ -8,19 +8,26 @@
 import SwiftUI
 
 struct MuezzinView: View {
+    
     var body: some View {
-        HStack(spacing: 12) {
-            GroupBox {
-                DateView()
+        VStack(spacing: 12) {
+            HStack(spacing: 12) {
+                GroupBox {
+                    DateView()
+                }
+                GroupBox {
+                    ButtonsView()
+                }
             }
             GroupBox {
-                ButtonsView()
+                NextPrayerView()
+                    
+            }
+            GroupBox {
+                PrayerTimesView()
             }
         }
-        .padding(.bottom, 4)
-        GroupBox {
-            PrayerTimesView()
-        }
+        .padding(12)
     }
 }
 

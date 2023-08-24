@@ -15,6 +15,8 @@ struct SettingsLocationView: View {
     @State private var timeZone = TimeZone.current.identifier
     @State private var location: CLLocationCoordinate2D? = nil
     
+    @StateObject private var locationManager = LocationManager()
+    
     var sortedTimeZoneIdentifiers: [String] {
         TimeZone.knownTimeZoneIdentifiers.sorted {
             formatTimeZoneIdentifier($0) < formatTimeZoneIdentifier($1)
@@ -25,6 +27,10 @@ struct SettingsLocationView: View {
         Form {
             Section {
                 Toggle("Use current location", isOn: $flag)
+            } footer: {
+                
+                
+                Spacer()
             }
             
             Section("Prayer times location") {
@@ -39,6 +45,13 @@ struct SettingsLocationView: View {
             .disabled(flag)
         }
         .formStyle(.grouped)
+    }
+    
+    var locationFooter: some View {
+        Group {
+            
+        }
+        
     }
     
     func formatTimeZoneIdentifier(_ identifier: String) -> String {

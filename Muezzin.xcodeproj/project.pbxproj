@@ -9,9 +9,14 @@
 /* Begin PBXBuildFile section */
 		552B73492A95751E001216D2 /* athan2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 552B73472A95751E001216D2 /* athan2.mp3 */; };
 		552B734C2A9578AF001216D2 /* dua.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 552B734B2A9578AF001216D2 /* dua.mp3 */; };
+		553385782A97E56C00B86A65 /* Adhan in Frameworks */ = {isa = PBXBuildFile; productRef = 553385772A97E56C00B86A65 /* Adhan */; };
+		5533857A2A97F2FB00B86A65 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385792A97F2FA00B86A65 /* GlobalFunctions.swift */; };
+		5533857D2A9823DB00B86A65 /* Athan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5533857C2A9823DB00B86A65 /* Athan.swift */; };
 		554C888F2A954AAD00C2B6C7 /* MLocationMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554C888E2A954AAD00C2B6C7 /* MLocationMap.swift */; };
 		5570CF692A96E47E00E22FED /* athan3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5570CF682A96E47E00E22FED /* athan3.mp3 */; };
 		5570CF6B2A96EF0800E22FED /* athan4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5570CF6A2A96EF0800E22FED /* athan4.mp3 */; };
+		5570CF6D2A97043300E22FED /* NextPrayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5570CF6C2A97043300E22FED /* NextPrayerView.swift */; };
+		5570CF702A97AF6500E22FED /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5570CF6F2A97AF6500E22FED /* LocationManager.swift */; };
 		55C172CB2A8D2D1D0022367E /* MButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C172CA2A8D2D1D0022367E /* MButtonStyle.swift */; };
 		55C172CF2A8D493E0022367E /* athan1_fajr.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55C172CD2A8D493E0022367E /* athan1_fajr.mp3 */; };
 		55C172D02A8D493E0022367E /* athan1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55C172CE2A8D493E0022367E /* athan1.mp3 */; };
@@ -21,8 +26,6 @@
 		55C172DB2A8F25670022367E /* SettingsPrayerTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C172DA2A8F25670022367E /* SettingsPrayerTimesView.swift */; };
 		55C172DF2A8F26250022367E /* SettingsAdvancedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C172DE2A8F26250022367E /* SettingsAdvancedView.swift */; };
 		55C172E12A8F27220022367E /* SettingsNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C172E02A8F27220022367E /* SettingsNotificationsView.swift */; };
-		55C172E72A8F30B20022367E /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = 55C172E62A8F30B20022367E /* SwiftUIIntrospect */; };
-		55C172EB2A91BC420022367E /* MuezzinLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C172EA2A91BC420022367E /* MuezzinLabel.swift */; };
 		55CE8E3529F9E8C1001948D6 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE8E3429F9E8C1001948D6 /* AppSettings.swift */; };
 		55CE8E3829F9F1CA001948D6 /* CalculationMethod+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE8E3729F9F1CA001948D6 /* CalculationMethod+Ext.swift */; };
 		55CE8E3A29FB4035001948D6 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE8E3929FB4035001948D6 /* SwiftUIView.swift */; };
@@ -37,15 +40,19 @@
 		55F8BD4A29F0A9F1009D0D4D /* PrayerTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8BD4929F0A9F1009D0D4D /* PrayerTimesView.swift */; };
 		55F8BD4C29F0AA76009D0D4D /* PrayerTimesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8BD4B29F0AA76009D0D4D /* PrayerTimesCell.swift */; };
 		55F8BD4E29F0AADD009D0D4D /* MButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8BD4D29F0AADD009D0D4D /* MButton.swift */; };
-		55F8BD7729F3235D009D0D4D /* Adhan in Frameworks */ = {isa = PBXBuildFile; productRef = 55F8BD7629F3235D009D0D4D /* Adhan */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		552B73472A95751E001216D2 /* athan2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = athan2.mp3; sourceTree = "<group>"; };
 		552B734B2A9578AF001216D2 /* dua.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dua.mp3; sourceTree = "<group>"; };
+		553385792A97F2FA00B86A65 /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
+		5533857C2A9823DB00B86A65 /* Athan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Athan.swift; sourceTree = "<group>"; };
 		554C888E2A954AAD00C2B6C7 /* MLocationMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLocationMap.swift; sourceTree = "<group>"; };
 		5570CF682A96E47E00E22FED /* athan3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = athan3.mp3; sourceTree = "<group>"; };
 		5570CF6A2A96EF0800E22FED /* athan4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = athan4.mp3; sourceTree = "<group>"; };
+		5570CF6C2A97043300E22FED /* NextPrayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPrayerView.swift; sourceTree = "<group>"; };
+		5570CF6F2A97AF6500E22FED /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		5570CF712A97C0CC00E22FED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		55C172CA2A8D2D1D0022367E /* MButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MButtonStyle.swift; sourceTree = "<group>"; };
 		55C172CD2A8D493E0022367E /* athan1_fajr.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = athan1_fajr.mp3; sourceTree = "<group>"; };
 		55C172CE2A8D493E0022367E /* athan1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = athan1.mp3; sourceTree = "<group>"; };
@@ -55,7 +62,6 @@
 		55C172DA2A8F25670022367E /* SettingsPrayerTimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPrayerTimesView.swift; sourceTree = "<group>"; };
 		55C172DE2A8F26250022367E /* SettingsAdvancedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAdvancedView.swift; sourceTree = "<group>"; };
 		55C172E02A8F27220022367E /* SettingsNotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNotificationsView.swift; sourceTree = "<group>"; };
-		55C172EA2A91BC420022367E /* MuezzinLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuezzinLabel.swift; sourceTree = "<group>"; };
 		55CE8E3429F9E8C1001948D6 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		55CE8E3729F9F1CA001948D6 /* CalculationMethod+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalculationMethod+Ext.swift"; sourceTree = "<group>"; };
 		55CE8E3929FB4035001948D6 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
@@ -79,20 +85,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55F8BD7729F3235D009D0D4D /* Adhan in Frameworks */,
-				55C172E72A8F30B20022367E /* SwiftUIIntrospect in Frameworks */,
+				553385782A97E56C00B86A65 /* Adhan in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5533857B2A9823C800B86A65 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				5533857C2A9823DB00B86A65 /* Athan.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		554C888C2A954A7D00C2B6C7 /* Custom Components */ = {
 			isa = PBXGroup;
 			children = (
 				554C888E2A954AAD00C2B6C7 /* MLocationMap.swift */,
 			);
 			path = "Custom Components";
+			sourceTree = "<group>";
+		};
+		5570CF6E2A97AF5600E22FED /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				55C172D12A8D4B1C0022367E /* AudioPlayer.swift */,
+				5570CF6F2A97AF6500E22FED /* LocationManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		55C172C92A8D2D040022367E /* ButtonStyles */ = {
@@ -157,16 +179,19 @@
 		55F8BD3329EDA3F9009D0D4D /* Muezzin */ = {
 			isa = PBXGroup;
 			children = (
+				5570CF712A97C0CC00E22FED /* Info.plist */,
+				55F8BD3429EDA3F9009D0D4D /* MuezzinApp.swift */,
+				55CE8E3429F9E8C1001948D6 /* AppSettings.swift */,
 				55C172C92A8D2D040022367E /* ButtonStyles */,
 				55CE8E3629F9F1B4001948D6 /* Extensions */,
-				55F8BD3429EDA3F9009D0D4D /* MuezzinApp.swift */,
-				55C172EA2A91BC420022367E /* MuezzinLabel.swift */,
-				55C172D12A8D4B1C0022367E /* AudioPlayer.swift */,
-				55CE8E3429F9E8C1001948D6 /* AppSettings.swift */,
+				5570CF6E2A97AF5600E22FED /* Managers */,
+				5533857B2A9823C800B86A65 /* Enums */,
+				553385792A97F2FA00B86A65 /* GlobalFunctions.swift */,
 				55F8BD4329F0A996009D0D4D /* MuezzinView.swift */,
 				55CE8E3B29FC8C02001948D6 /* MuezzinViewModel.swift */,
 				55F8BD4529F0A9C1009D0D4D /* DateView.swift */,
 				55F8BD4729F0A9D3009D0D4D /* ButtonsView.swift */,
+				5570CF6C2A97043300E22FED /* NextPrayerView.swift */,
 				55F8BD4929F0A9F1009D0D4D /* PrayerTimesView.swift */,
 				55F8BD4B29F0AA76009D0D4D /* PrayerTimesCell.swift */,
 				55F8BD4D29F0AADD009D0D4D /* MButton.swift */,
@@ -205,8 +230,7 @@
 			);
 			name = Muezzin;
 			packageProductDependencies = (
-				55F8BD7629F3235D009D0D4D /* Adhan */,
-				55C172E62A8F30B20022367E /* SwiftUIIntrospect */,
+				553385772A97E56C00B86A65 /* Adhan */,
 			);
 			productName = Muezzin;
 			productReference = 55F8BD3129EDA3F9009D0D4D /* Muezzin.app */;
@@ -237,8 +261,7 @@
 			);
 			mainGroup = 55F8BD2829EDA3F9009D0D4D;
 			packageReferences = (
-				55F8BD7529F3235D009D0D4D /* XCRemoteSwiftPackageReference "adhan-swift" */,
-				55C172E52A8F30B20022367E /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
+				553385762A97E56C00B86A65 /* XCRemoteSwiftPackageReference "adhan-swift" */,
 			);
 			productRefGroup = 55F8BD3229EDA3F9009D0D4D /* Products */;
 			projectDirPath = "";
@@ -275,19 +298,22 @@
 				55CE8E3829F9F1CA001948D6 /* CalculationMethod+Ext.swift in Sources */,
 				55F8BD4A29F0A9F1009D0D4D /* PrayerTimesView.swift in Sources */,
 				55CE8E3A29FB4035001948D6 /* SwiftUIView.swift in Sources */,
-				55C172EB2A91BC420022367E /* MuezzinLabel.swift in Sources */,
 				55CE8E3C29FC8C02001948D6 /* MuezzinViewModel.swift in Sources */,
 				55F8BD4E29F0AADD009D0D4D /* MButton.swift in Sources */,
 				55F8BD4429F0A996009D0D4D /* MuezzinView.swift in Sources */,
 				55F8BD4829F0A9D3009D0D4D /* ButtonsView.swift in Sources */,
+				5570CF6D2A97043300E22FED /* NextPrayerView.swift in Sources */,
 				55C172CB2A8D2D1D0022367E /* MButtonStyle.swift in Sources */,
 				55F8BD3729EDA3F9009D0D4D /* SettingsView.swift in Sources */,
 				55F8BD4629F0A9C1009D0D4D /* DateView.swift in Sources */,
 				55C172D92A8F25440022367E /* SettingsLocationView.swift in Sources */,
 				55C172D72A8F23DD0022367E /* SettingsGeneralView.swift in Sources */,
 				554C888F2A954AAD00C2B6C7 /* MLocationMap.swift in Sources */,
+				5570CF702A97AF6500E22FED /* LocationManager.swift in Sources */,
+				5533857A2A97F2FB00B86A65 /* GlobalFunctions.swift in Sources */,
 				55C172E12A8F27220022367E /* SettingsNotificationsView.swift in Sources */,
 				55CE8E3529F9E8C1001948D6 /* AppSettings.swift in Sources */,
+				5533857D2A9823DB00B86A65 /* Athan.swift in Sources */,
 				55F8BD3529EDA3F9009D0D4D /* MuezzinApp.swift in Sources */,
 				55C172DF2A8F26250022367E /* SettingsAdvancedView.swift in Sources */,
 				55F8BD4C29F0AA76009D0D4D /* PrayerTimesCell.swift in Sources */,
@@ -424,6 +450,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Muezzin/Muezzin.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -432,17 +459,21 @@
 				DEVELOPMENT_TEAM = 4UD8YB3K7V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Muezzin/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Muezzin;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs your location to get prayer times.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs your location to get prayer times.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to get prayer times.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mohalibou.Muezzin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mohalibou.Muezzin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -455,6 +486,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Muezzin/Muezzin.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -463,17 +495,21 @@
 				DEVELOPMENT_TEAM = 4UD8YB3K7V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Muezzin/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Muezzin;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs your location to get prayer times.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs your location to get prayer times.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to get prayer times.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mohalibou.Muezzin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mohalibou.Muezzin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -504,33 +540,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		55C172E52A8F30B20022367E /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.11.0;
-			};
-		};
-		55F8BD7529F3235D009D0D4D /* XCRemoteSwiftPackageReference "adhan-swift" */ = {
+		553385762A97E56C00B86A65 /* XCRemoteSwiftPackageReference "adhan-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/batoulapps/adhan-swift";
 			requirement = {
-				kind = upToNextMinorVersion;
+				kind = upToNextMajorVersion;
 				minimumVersion = 1.4.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		55C172E62A8F30B20022367E /* SwiftUIIntrospect */ = {
+		553385772A97E56C00B86A65 /* Adhan */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 55C172E52A8F30B20022367E /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
-			productName = SwiftUIIntrospect;
-		};
-		55F8BD7629F3235D009D0D4D /* Adhan */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 55F8BD7529F3235D009D0D4D /* XCRemoteSwiftPackageReference "adhan-swift" */;
+			package = 553385762A97E56C00B86A65 /* XCRemoteSwiftPackageReference "adhan-swift" */;
 			productName = Adhan;
 		};
 /* End XCSwiftPackageProductDependency section */

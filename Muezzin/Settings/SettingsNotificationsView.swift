@@ -9,95 +9,97 @@ import SwiftUI
 
 struct SettingsNotificationsView: View {
     
+    @StateObject private var settings = AppSettings.shared
+    
     @StateObject private var fajrPlayer = AudioPlayer()
     @StateObject private var duhrPlayer = AudioPlayer()
     @StateObject private var asrPlayer = AudioPlayer()
     @StateObject private var maghribPlayer = AudioPlayer()
     @StateObject private var ishaPlayer = AudioPlayer()
     
-    @State private var fajr = "athan1_fajr"
-    @State private var duhr = "athan1"
-    @State private var asr = "athan2"
-    @State private var maghrib = "athan3"
-    @State private var isha = "athan4"
-    
-    @State private var flag: Bool = false
-    @State private var flag2: Bool = false
-    
     var body: some View {
         Form {
             Section {
-                Toggle("Silent Mode", isOn: $flag)
+                Toggle("Silent Mode", isOn: settings.$silentMode)
             }
             
             Section {
                 HStack {
-                    Picker("Fajr", selection: $fajr) {
-                        Text("Alafasy (Fajr)").tag("athan1_fajr")
+                    Picker("Fajr", selection: settings.$fajr) {
+                        Text("None").tag("none")
                         Divider()
+                        Text("Alafasy (Fajr)").tag("athan1_fajr")
                         Text("Alafasy").tag("athan1")
                         Text("Mullah").tag("athan2")
                         Text("Al-Qatami").tag("athan3")
                         Text("Güneşdoğdu").tag("athan4")
                     }
                     Button(fajrPlayer.isPlaying ? "Stop" : "Play") {
-                        playAthan(fajr, with: fajrPlayer)
+                        playAthan(settings.fajr, with: fajrPlayer)
                     }
                 }
                 HStack {
-                    Picker("Duhr", selection: $duhr) {
+                    Picker("Duhr", selection: settings.$duhr) {
+                        Text("None").tag("none")
+                        Divider()
                         Text("Alafasy").tag("athan1")
                         Text("Mullah").tag("athan2")
                         Text("Al-Qatami").tag("athan3")
                         Text("Güneşdoğdu").tag("athan4")
                     }
                     Button(duhrPlayer.isPlaying ? "Stop" : "Play") {
-                        playAthan(duhr, with: duhrPlayer)
+                        playAthan(settings.duhr, with: duhrPlayer)
                     }
                 }
                 
                 HStack {
-                    Picker("Asr", selection: $asr) {
+                    Picker("Asr", selection: settings.$asr) {
+                        Text("None").tag("none")
+                        Divider()
                         Text("Alafasy").tag("athan1")
                         Text("Mullah").tag("athan2")
                         Text("Al-Qatami").tag("athan3")
                         Text("Güneşdoğdu").tag("athan4")
                     }
                     Button(asrPlayer.isPlaying ? "Stop" : "Play") {
-                        playAthan(asr, with: asrPlayer)
+                        playAthan(settings.asr, with: asrPlayer)
                     }
                 }
                 
                 HStack {
-                    Picker("Maghrib", selection: $maghrib) {
+                    Picker("Maghrib", selection: settings.$maghrib) {
+                        Text("None").tag("none")
+                        Divider()
                         Text("Alafasy").tag("athan1")
                         Text("Mullah").tag("athan2")
                         Text("Al-Qatami").tag("athan3")
                         Text("Güneşdoğdu").tag("athan4")
                     }
                     Button(maghribPlayer.isPlaying ? "Stop" : "Play") {
-                        playAthan(maghrib, with: maghribPlayer)
+                        playAthan(settings.maghrib, with: maghribPlayer)
                     }
                 }
                 
                 HStack {
-                    Picker("Isha", selection: $isha) {
+                    Picker("Isha", selection: settings.$isha) {
+                        Text("None").tag("none")
+                        Divider()
                         Text("Alafasy").tag("athan1")
                         Text("Mullah").tag("athan2")
                         Text("Al-Qatami").tag("athan3")
                         Text("Güneşdoğdu").tag("athan4")
                     }
                     Button(ishaPlayer.isPlaying ? "Stop" : "Play") {
-                        playAthan(isha, with: ishaPlayer)
+                        playAthan(settings.isha, with: ishaPlayer)
                     }
                 }
             }
-            .disabled(flag)
+            .disabled(settings.silentMode)
             
             Section {
-                Toggle("Play Dua After Athan", isOn: $flag2)
+                Toggle("Play Dua After Athan", isOn: settings.$playDuaAfterAthan)
             }
-            .disabled(flag)
+            .disabled(settings.silentMode)
             
             Section {
                 HStack {

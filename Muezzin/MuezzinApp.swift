@@ -5,18 +5,31 @@
 //  Created by Mohamed Ali Boutaleb on 4/17/23.
 //
 
-import SwiftUIIntrospect
 import SwiftUI
 
 @main
 struct MuezzinApp: App {
+    
+    @StateObject private var settings = AppSettings.shared
+    var locationManager = LocationManager()
+    
     var body: some Scene {
         MenuBarExtra {
             MuezzinView()
-                .padding(12)
+                .environmentObject(locationManager)
+                
         } label: {
-            Label("Hello", systemImage: "person")
-                .labelStyle(.titleAndIcon)
+            HStack {
+                if settings.displayIcon {
+                    Image(systemName: "person")
+                }
+                if settings.displayNextPrayer {
+                    Text("Hello")
+                }
+            }
+            .onAppear {
+                locationManager.checkIfLocationServicesIsEnabled()
+            }
         }
         .menuBarExtraStyle(.window)
         
@@ -42,24 +55,24 @@ struct MuezzinApp: App {
 }
 
 /*
-HStack {
-    let configuration = NSImage.SymbolConfiguration(pointSize: 16, weight: .light)
-        .applying(.init(hierarchicalColor: .red))
-    
-    let image = NSImage(systemSymbolName: "moon.stars.fill", accessibilityDescription: nil)!
-        .withSymbolConfiguration(configuration)
-    
-    let attributedText = NSAttributedString(string: "Muezzin", attributes: [.foregroundColor: Color.green])
-    
-    let myString = " Fajr 4:54"
-    let myAttribute = [ NSAttributedString.Key.foregroundColor: NSColor.blue ]
-    let myAttrString = NSAttributedString(string: myString, attributes: myAttribute)
-    
-    Label {
-        Text(AttributedString(myAttrString)).foregroundStyle(.red, .green)
-    } icon: {
-        Image(nsImage: image!)
-    }
-    .labelStyle(.titleAndIcon)
-
-}*/
+ HStack {
+ let configuration = NSImage.SymbolConfiguration(pointSize: 16, weight: .light)
+ .applying(.init(hierarchicalColor: .red))
+ 
+ let image = NSImage(systemSymbolName: "moon.stars.fill", accessibilityDescription: nil)!
+ .withSymbolConfiguration(configuration)
+ 
+ let attributedText = NSAttributedString(string: "Muezzin", attributes: [.foregroundColor: Color.green])
+ 
+ let myString = " Fajr 4:54"
+ let myAttribute = [ NSAttributedString.Key.foregroundColor: NSColor.blue ]
+ let myAttrString = NSAttributedString(string: myString, attributes: myAttribute)
+ 
+ Label {
+ Text(AttributedString(myAttrString)).foregroundStyle(.red, .green)
+ } icon: {
+ Image(nsImage: image!)
+ }
+ .labelStyle(.titleAndIcon)
+ 
+ }*/

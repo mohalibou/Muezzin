@@ -40,7 +40,7 @@ struct MLocationMap: View {
             VStack {
                 HStack {
                     locationMessage
-                        .overlay(Color.black.opacity(disabled ? 0.6 : 0))
+                        
                         .padding(8)
                     Spacer()
                 }
@@ -70,6 +70,7 @@ struct MLocationMap: View {
     var locationMessage: some View {
         Text("Location: \(locationName)")
             .padding(8)
+            .overlay(Color.black.opacity(disabled ? 0.6 : 0))
             .background {
                 RoundedRectangle(cornerRadius: 5)
                     .strokeBorder(Color(nsColor: .quaternaryLabelColor), lineWidth: 1)

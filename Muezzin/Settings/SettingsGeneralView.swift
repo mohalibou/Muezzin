@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SettingsGeneralView: View {
     
+    @StateObject private var settings = AppSettings.shared
+    
     @State private var flag = true
     @State private var flag2 = "time"
     @State private var flag3 = "full"
@@ -18,9 +20,19 @@ struct SettingsGeneralView: View {
     var body: some View {
         Form {
             Section {
-                Toggle("Start Muezzin at login", isOn: $flag4)
-                Toggle("Display icon in menu bar", isOn: $flag5)
-                Toggle("Display next prayer in menu bar", isOn: $flag)
+                Toggle("Start Muezzin at login", isOn: settings.$startAtLogin)
+                Toggle("Display icon in menu bar", isOn: settings.$displayIcon)
+                    .onChange(of: settings.displayIcon) {
+                        if !settings.displayIcon && !settings.displayNextPrayer {
+                            settings.displayNextPrayer.toggle()
+                        }
+                    }
+                Toggle("Display next prayer in menu bar", isOn: settings.$displayNextPrayer)
+                    .onChange(of: settings.displayNextPrayer) {
+                        if !settings.displayIcon && !settings.displayNextPrayer {
+                            settings.displayIcon.toggle()
+                        }
+                    }
             }
             
             Section {
