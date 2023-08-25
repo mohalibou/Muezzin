@@ -12,6 +12,7 @@ import SwiftUI
 final class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     var locationManager: CLLocationManager?
     @Published var locationName: String = ""
+    @Published var coordinates = CLLocation(latitude: 0, longitude: 0)
     
     // Check if location services is enabled on the device.
     func checkIfLocationServicesIsEnabled() {
@@ -48,8 +49,9 @@ final class LocationManager: NSObject, ObservableObject, CLLocationManagerDelega
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
             print("Latitude: \(location.coordinate.latitude), Longitude: \(location.coordinate.longitude)")
-            reverseGeocode(location) { array in
-                self.locationName = array.joined(separator: ", ")
+            reverseGeocode(for: .city, location: location) { data in
+                self.locationName = data
+                self.coordinates = location
                 print(self.locationName)
             }
         }

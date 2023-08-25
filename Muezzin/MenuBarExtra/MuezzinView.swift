@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MuezzinView: View {
     
+    @StateObject private var vm = MuezzinViewModel()
+    
     var body: some View {
         VStack(spacing: 12) {
             HStack(spacing: 12) {
@@ -20,7 +22,7 @@ struct MuezzinView: View {
                 }
             }
             GroupBox {
-                PrayerTimesView()
+                PrayerTimesView(vm: vm)
             }
             GroupBox {
                 NextPrayerView()

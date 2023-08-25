@@ -35,6 +35,7 @@ struct MuezzinApp: App {
         
         Settings {
             SettingsView()
+                .environmentObject(locationManager)
         }
         
         

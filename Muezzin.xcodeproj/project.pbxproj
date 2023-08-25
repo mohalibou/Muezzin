@@ -13,6 +13,8 @@
 		5533857A2A97F2FB00B86A65 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385792A97F2FA00B86A65 /* GlobalFunctions.swift */; };
 		5533857D2A9823DB00B86A65 /* Athan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5533857C2A9823DB00B86A65 /* Athan.swift */; };
 		5533857F2A9826F300B86A65 /* PrayerTimesCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5533857E2A9826F300B86A65 /* PrayerTimesCell2.swift */; };
+		553385852A983B3200B86A65 /* MNotificationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385842A983B3200B86A65 /* MNotificationPicker.swift */; };
+		553385872A984C5A00B86A65 /* ReverseGeocodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385862A984C5A00B86A65 /* ReverseGeocodeType.swift */; };
 		554C888F2A954AAD00C2B6C7 /* MLocationMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554C888E2A954AAD00C2B6C7 /* MLocationMap.swift */; };
 		5570CF692A96E47E00E22FED /* athan3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5570CF682A96E47E00E22FED /* athan3.mp3 */; };
 		5570CF6B2A96EF0800E22FED /* athan4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5570CF6A2A96EF0800E22FED /* athan4.mp3 */; };
@@ -49,6 +51,8 @@
 		553385792A97F2FA00B86A65 /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		5533857C2A9823DB00B86A65 /* Athan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Athan.swift; sourceTree = "<group>"; };
 		5533857E2A9826F300B86A65 /* PrayerTimesCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimesCell2.swift; sourceTree = "<group>"; };
+		553385842A983B3200B86A65 /* MNotificationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNotificationPicker.swift; sourceTree = "<group>"; };
+		553385862A984C5A00B86A65 /* ReverseGeocodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseGeocodeType.swift; sourceTree = "<group>"; };
 		554C888E2A954AAD00C2B6C7 /* MLocationMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLocationMap.swift; sourceTree = "<group>"; };
 		5570CF682A96E47E00E22FED /* athan3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = athan3.mp3; sourceTree = "<group>"; };
 		5570CF6A2A96EF0800E22FED /* athan4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = athan4.mp3; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				5533857C2A9823DB00B86A65 /* Athan.swift */,
+				553385862A984C5A00B86A65 /* ReverseGeocodeType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				554C888E2A954AAD00C2B6C7 /* MLocationMap.swift */,
+				553385842A983B3200B86A65 /* MNotificationPicker.swift */,
 			);
 			path = "Custom Components";
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 				5570CF6D2A97043300E22FED /* NextPrayerView.swift in Sources */,
 				55C172CB2A8D2D1D0022367E /* MButtonStyle.swift in Sources */,
 				55F8BD3729EDA3F9009D0D4D /* SettingsView.swift in Sources */,
+				553385852A983B3200B86A65 /* MNotificationPicker.swift in Sources */,
 				55F8BD4629F0A9C1009D0D4D /* DateView.swift in Sources */,
 				55C172D92A8F25440022367E /* SettingsLocationView.swift in Sources */,
 				55C172D72A8F23DD0022367E /* SettingsGeneralView.swift in Sources */,
@@ -335,6 +342,7 @@
 				55CE8E3529F9E8C1001948D6 /* AppSettings.swift in Sources */,
 				5533857D2A9823DB00B86A65 /* Athan.swift in Sources */,
 				55F8BD3529EDA3F9009D0D4D /* MuezzinApp.swift in Sources */,
+				553385872A984C5A00B86A65 /* ReverseGeocodeType.swift in Sources */,
 				55C172DF2A8F26250022367E /* SettingsAdvancedView.swift in Sources */,
 				55F8BD4C29F0AA76009D0D4D /* PrayerTimesCell.swift in Sources */,
 				55C172DB2A8F25670022367E /* SettingsPrayerTimesView.swift in Sources */,
