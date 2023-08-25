@@ -20,11 +20,10 @@ struct MuezzinView: View {
                 }
             }
             GroupBox {
-                NextPrayerView()
-                    
+                PrayerTimesView()
             }
             GroupBox {
-                PrayerTimesView()
+                NextPrayerView()
             }
         }
         .padding(12)

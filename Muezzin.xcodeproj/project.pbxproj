@@ -12,6 +12,7 @@
 		553385782A97E56C00B86A65 /* Adhan in Frameworks */ = {isa = PBXBuildFile; productRef = 553385772A97E56C00B86A65 /* Adhan */; };
 		5533857A2A97F2FB00B86A65 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385792A97F2FA00B86A65 /* GlobalFunctions.swift */; };
 		5533857D2A9823DB00B86A65 /* Athan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5533857C2A9823DB00B86A65 /* Athan.swift */; };
+		5533857F2A9826F300B86A65 /* PrayerTimesCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5533857E2A9826F300B86A65 /* PrayerTimesCell2.swift */; };
 		554C888F2A954AAD00C2B6C7 /* MLocationMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554C888E2A954AAD00C2B6C7 /* MLocationMap.swift */; };
 		5570CF692A96E47E00E22FED /* athan3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5570CF682A96E47E00E22FED /* athan3.mp3 */; };
 		5570CF6B2A96EF0800E22FED /* athan4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5570CF6A2A96EF0800E22FED /* athan4.mp3 */; };
@@ -47,6 +48,7 @@
 		552B734B2A9578AF001216D2 /* dua.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dua.mp3; sourceTree = "<group>"; };
 		553385792A97F2FA00B86A65 /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		5533857C2A9823DB00B86A65 /* Athan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Athan.swift; sourceTree = "<group>"; };
+		5533857E2A9826F300B86A65 /* PrayerTimesCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimesCell2.swift; sourceTree = "<group>"; };
 		554C888E2A954AAD00C2B6C7 /* MLocationMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLocationMap.swift; sourceTree = "<group>"; };
 		5570CF682A96E47E00E22FED /* athan3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = athan3.mp3; sourceTree = "<group>"; };
 		5570CF6A2A96EF0800E22FED /* athan4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = athan4.mp3; sourceTree = "<group>"; };
@@ -98,6 +100,30 @@
 				5533857C2A9823DB00B86A65 /* Athan.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		553385822A983A1400B86A65 /* MenuBarExtra */ = {
+			isa = PBXGroup;
+			children = (
+				55CE8E3B29FC8C02001948D6 /* MuezzinViewModel.swift */,
+				55F8BD4329F0A996009D0D4D /* MuezzinView.swift */,
+				55F8BD4529F0A9C1009D0D4D /* DateView.swift */,
+				55F8BD4729F0A9D3009D0D4D /* ButtonsView.swift */,
+				55F8BD4929F0A9F1009D0D4D /* PrayerTimesView.swift */,
+				5570CF6C2A97043300E22FED /* NextPrayerView.swift */,
+				553385832A983A4D00B86A65 /* Custom Components */,
+			);
+			path = MenuBarExtra;
+			sourceTree = "<group>";
+		};
+		553385832A983A4D00B86A65 /* Custom Components */ = {
+			isa = PBXGroup;
+			children = (
+				55F8BD4B29F0AA76009D0D4D /* PrayerTimesCell.swift */,
+				5533857E2A9826F300B86A65 /* PrayerTimesCell2.swift */,
+				55F8BD4D29F0AADD009D0D4D /* MButton.swift */,
+			);
+			path = "Custom Components";
 			sourceTree = "<group>";
 		};
 		554C888C2A954A7D00C2B6C7 /* Custom Components */ = {
@@ -187,14 +213,7 @@
 				5570CF6E2A97AF5600E22FED /* Managers */,
 				5533857B2A9823C800B86A65 /* Enums */,
 				553385792A97F2FA00B86A65 /* GlobalFunctions.swift */,
-				55F8BD4329F0A996009D0D4D /* MuezzinView.swift */,
-				55CE8E3B29FC8C02001948D6 /* MuezzinViewModel.swift */,
-				55F8BD4529F0A9C1009D0D4D /* DateView.swift */,
-				55F8BD4729F0A9D3009D0D4D /* ButtonsView.swift */,
-				5570CF6C2A97043300E22FED /* NextPrayerView.swift */,
-				55F8BD4929F0A9F1009D0D4D /* PrayerTimesView.swift */,
-				55F8BD4B29F0AA76009D0D4D /* PrayerTimesCell.swift */,
-				55F8BD4D29F0AADD009D0D4D /* MButton.swift */,
+				553385822A983A1400B86A65 /* MenuBarExtra */,
 				55C172D52A8F23B80022367E /* Settings */,
 				55CE8E3929FB4035001948D6 /* SwiftUIView.swift */,
 				55C172CC2A8D49240022367E /* Sounds */,
@@ -310,6 +329,7 @@
 				55C172D72A8F23DD0022367E /* SettingsGeneralView.swift in Sources */,
 				554C888F2A954AAD00C2B6C7 /* MLocationMap.swift in Sources */,
 				5570CF702A97AF6500E22FED /* LocationManager.swift in Sources */,
+				5533857F2A9826F300B86A65 /* PrayerTimesCell2.swift in Sources */,
 				5533857A2A97F2FB00B86A65 /* GlobalFunctions.swift in Sources */,
 				55C172E12A8F27220022367E /* SettingsNotificationsView.swift in Sources */,
 				55CE8E3529F9E8C1001948D6 /* AppSettings.swift in Sources */,

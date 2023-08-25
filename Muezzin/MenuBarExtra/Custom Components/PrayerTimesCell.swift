@@ -15,11 +15,35 @@ struct PrayerTimesCell: View {
     
     var name: String
     var time: String
-    var image: String
-    var notification: String
+    @Binding var notification: String
+    
+    var image: String {
+        switch name {
+        case "Fajr":
+            return "light.max"
+        case "Duhr":
+            return "sun.max.fill"
+        case "Asr":
+            return "sun.min.fill"
+        case "Maghrib":
+            return "sunset.fill"
+        case "Isha":
+            return "moon.stars.fill"
+        default:
+            return ""
+        }
+    }
+    
+    var icon: String {
+        if notification != "none" {
+            return "bell.fill"
+        } else {
+            return "bell.slash"
+        }
+    }
     
     var color: Color {
-        switch(notification) {
+        switch(icon) {
         case "bell.slash":
             return .red
         case "bell.fill":
@@ -30,6 +54,8 @@ struct PrayerTimesCell: View {
             return .primary
         }
     }
+    
+    
     
     var notificationIcons: [String] = ["bell.slash", "bell.fill", "pause.fill"]
     
@@ -47,39 +73,13 @@ struct PrayerTimesCell: View {
             
             if !settings.silentMode {
                 Button {
-                    if name == "Fajr" {
-                        if settings.fajr != "none" {
-                            settings.fajr = "none"
-                        } else {
-                            settings.fajr = "athan1_fajr"
-                        }
-                    } else if name == "Duhr" {
-                        if settings.duhr != "none" {
-                            settings.duhr = "none"
-                        } else {
-                            settings.duhr = "athan1"
-                        }
-                    } else if name == "Asr" {
-                        if settings.asr != "none" {
-                            settings.asr = "none"
-                        } else {
-                            settings.asr = "athan1"
-                        }
-                    } else if name == "Maghrib" {
-                        if settings.maghrib != "none" {
-                            settings.maghrib = "none"
-                        } else {
-                            settings.maghrib = "athan1"
-                        }
-                    } else if name == "Isha" {
-                        if settings.isha != "none" {
-                            settings.isha = "none"
-                        } else {
-                            settings.isha = "athan1"
-                        }
+                    if notification != "none" {
+                        notification = "none"
+                    } else {
+                        notification = (name == "Fajr" ? "athan1_fajr" : "athan1")
                     }
                 } label: {
-                    Image(systemName: notification)
+                    Image(systemName: icon)
                         .scaledToFit()
                         .frame(width: 20)
                         .symbolRenderingMode(.palette)
@@ -95,7 +95,6 @@ struct PrayerTimesCell: View {
             }
         }
         .font(.title3)
-        .padding(.horizontal, 6)
         .padding(.vertical, 2)
         
     }
