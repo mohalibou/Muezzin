@@ -9,33 +9,19 @@ import SwiftUI
 
 @main
 struct MuezzinApp: App {
-    
-    @StateObject private var settings = AppSettings.shared
-    var locationManager = LocationManager()
-    
     var body: some Scene {
         MenuBarExtra {
             MuezzinView()
-                .environmentObject(locationManager)
-                
         } label: {
             HStack {
-                if settings.displayIcon {
-                    Image(systemName: "person")
-                }
-                if settings.displayNextPrayer {
-                    Text("Hello")
-                }
-            }
-            .onAppear {
-                locationManager.checkIfLocationServicesIsEnabled()
+                Image(systemName: "person")
+                Text("Hello")
             }
         }
         .menuBarExtraStyle(.window)
         
         Settings {
             SettingsView()
-                .environmentObject(locationManager)
         }
         
         
