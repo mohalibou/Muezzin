@@ -9,14 +9,14 @@ import SwiftUI
 
 @main
 struct MuezzinApp: App {
+    
+    @StateObject private var settings = AppSettings.shared
+    
     var body: some Scene {
         MenuBarExtra {
             MuezzinView()
         } label: {
-            HStack {
-                Image(systemName: "person")
-                Text("Hello")
-            }
+            menuBarLabel
         }
         .menuBarExtraStyle(.window)
         
@@ -24,42 +24,20 @@ struct MuezzinApp: App {
             SettingsView()
         }
         
-        
         Window("", id: "about") {
-            VStack {
-                Text("Hello")
-            }
-            .frame(width: 284, height: 100)
-            .onReceive(NotificationCenter.default.publisher(for: NSApplication.willUpdateNotification), perform: { _ in
-                for window in NSApplication.shared.windows {
-                    window.standardWindowButton(.miniaturizeButton)?.isEnabled = false
-                    window.standardWindowButton(.zoomButton)?.isEnabled = false
-                }
-            })
+            AboutView()
         }
         .windowResizability(.contentSize)
     }
+    
+    var menuBarLabel: some View {
+        HStack {
+            if settings.displayIcon {
+                Image(systemName: "person")
+            }
+            if settings.displayNextPrayer {
+                Text("Hello")
+            }
+        }
+    }
 }
-
-/*
- HStack {
- let configuration = NSImage.SymbolConfiguration(pointSize: 16, weight: .light)
- .applying(.init(hierarchicalColor: .red))
- 
- let image = NSImage(systemSymbolName: "moon.stars.fill", accessibilityDescription: nil)!
- .withSymbolConfiguration(configuration)
- 
- let attributedText = NSAttributedString(string: "Muezzin", attributes: [.foregroundColor: Color.green])
- 
- let myString = " Fajr 4:54"
- let myAttribute = [ NSAttributedString.Key.foregroundColor: NSColor.blue ]
- let myAttrString = NSAttributedString(string: myString, attributes: myAttribute)
- 
- Label {
- Text(AttributedString(myAttrString)).foregroundStyle(.red, .green)
- } icon: {
- Image(nsImage: image!)
- }
- .labelStyle(.titleAndIcon)
- 
- }*/
