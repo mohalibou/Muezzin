@@ -67,7 +67,7 @@ struct MLocationMap: View {
                 let customLocationLongitude = settings.customLocationLongitude {
                 location = CLLocationCoordinate2D(latitude: customLocationLatitude,
                                                   longitude: customLocationLongitude)
-                getLocationNameAndSetTimeZone()
+                getLocationName()
             }
             
         }
@@ -93,6 +93,20 @@ struct MLocationMap: View {
                     .strokeBorder(Color(nsColor: .quaternaryLabelColor), lineWidth: 1)
                     .background(RoundedRectangle(cornerRadius: 5).fill(Color(nsColor: .windowBackgroundColor)))
             }
+    }
+    
+    private func getLocationName() {
+        let locationToGeocode = CLLocation(latitude: location?.latitude ?? 0, longitude: location?.longitude ?? 0)
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(locationToGeocode) { (placemarks, error) in
+            if let placemark = placemarks?.first, let city = placemark.locality, let state = placemark.administrativeArea {
+                locationName = city == state ? "\(city)" : "\(city), \(state)"
+            } else if let placemark = placemarks?.first, let state = placemark.administrativeArea {
+                locationName = "\(state)"
+            } else {
+                locationName = "Unknown"
+            }
+        }
     }
     
     private func getLocationNameAndSetTimeZone() {

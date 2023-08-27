@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		552B73492A95751E001216D2 /* athan2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 552B73472A95751E001216D2 /* athan2.mp3 */; };
 		552B734C2A9578AF001216D2 /* dua.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 552B734B2A9578AF001216D2 /* dua.mp3 */; };
-		553385782A97E56C00B86A65 /* Adhan in Frameworks */ = {isa = PBXBuildFile; productRef = 553385772A97E56C00B86A65 /* Adhan */; };
 		553385892A9850A100B86A65 /* MuezzinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385882A9850A100B86A65 /* MuezzinView.swift */; };
 		5533858B2A9850CC00B86A65 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5533858A2A9850CC00B86A65 /* SettingsView.swift */; };
 		5533858D2A98514B00B86A65 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5533858C2A98514B00B86A65 /* AboutView.swift */; };
@@ -32,6 +31,7 @@
 		553385B92A99386300B86A65 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385B82A99386300B86A65 /* AudioPlayer.swift */; };
 		553385BD2A99392400B86A65 /* MNotificationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385BC2A99392400B86A65 /* MNotificationPicker.swift */; };
 		553385BF2A99666600B86A65 /* MuezzinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385BE2A99666600B86A65 /* MuezzinViewModel.swift */; };
+		553385D12A9B0FEC00B86A65 /* Adhan in Frameworks */ = {isa = PBXBuildFile; productRef = 553385D02A9B0FEC00B86A65 /* Adhan */; };
 		5570CF692A96E47E00E22FED /* athan3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5570CF682A96E47E00E22FED /* athan3.mp3 */; };
 		5570CF6B2A96EF0800E22FED /* athan4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5570CF6A2A96EF0800E22FED /* athan4.mp3 */; };
 		55C172CF2A8D493E0022367E /* athan1_fajr.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55C172CD2A8D493E0022367E /* athan1_fajr.mp3 */; };
@@ -83,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				553385782A97E56C00B86A65 /* Adhan in Frameworks */,
+				553385D12A9B0FEC00B86A65 /* Adhan in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +243,7 @@
 			);
 			name = Muezzin;
 			packageProductDependencies = (
-				553385772A97E56C00B86A65 /* Adhan */,
+				553385D02A9B0FEC00B86A65 /* Adhan */,
 			);
 			productName = Muezzin;
 			productReference = 55F8BD3129EDA3F9009D0D4D /* Muezzin.app */;
@@ -274,7 +274,7 @@
 			);
 			mainGroup = 55F8BD2829EDA3F9009D0D4D;
 			packageReferences = (
-				553385762A97E56C00B86A65 /* XCRemoteSwiftPackageReference "adhan-swift" */,
+				553385CF2A9B0FEC00B86A65 /* XCRemoteSwiftPackageReference "adhan-swift" */,
 			);
 			productRefGroup = 55F8BD3229EDA3F9009D0D4D /* Products */;
 			projectDirPath = "";
@@ -552,7 +552,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		553385762A97E56C00B86A65 /* XCRemoteSwiftPackageReference "adhan-swift" */ = {
+		553385CF2A9B0FEC00B86A65 /* XCRemoteSwiftPackageReference "adhan-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/batoulapps/adhan-swift";
 			requirement = {
@@ -563,9 +563,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		553385772A97E56C00B86A65 /* Adhan */ = {
+		553385D02A9B0FEC00B86A65 /* Adhan */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 553385762A97E56C00B86A65 /* XCRemoteSwiftPackageReference "adhan-swift" */;
+			package = 553385CF2A9B0FEC00B86A65 /* XCRemoteSwiftPackageReference "adhan-swift" */;
 			productName = Adhan;
 		};
 /* End XCSwiftPackageProductDependency section */
