@@ -14,10 +14,6 @@ struct SettingsLocationView: View {
     
     @State private var flag = false
     
-    @State private var location: CLLocationCoordinate2D?
-    
-
-    
     var body: some View {
         Form {
             Section {
@@ -25,7 +21,7 @@ struct SettingsLocationView: View {
             }
             
             Section("Prayer times location") {
-                MLocationMap(disabled: $flag, location: $location, timeZone: settings.$customTimeZone)
+                MLocationMap(disabled: $flag)
                 MTimeZonePicker(timeZone: settings.$customTimeZone)
             }
             .disabled(flag)

@@ -14,11 +14,17 @@ struct MLocationMap: View {
     @StateObject var settings = AppSettings.shared
     
     @Binding var disabled: Bool
-    @Binding var location: CLLocationCoordinate2D?
-    @Binding var timeZone: String
+    
+    @State private var location: CLLocationCoordinate2D?
     @State var locationName: String = "N/A"
     
-    let region: MKCoordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 25, longitude: 46), span: MKCoordinateSpan(latitudeDelta: 30, longitudeDelta: 30))
+    var region: MKCoordinateRegion {
+        MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: settings.customLocationLatitude ?? 25,
+                                                          longitude: settings.customLocationLongitude ?? 46),
+                           span: MKCoordinateSpan(latitudeDelta: 30,
+                                                  longitudeDelta: 30))
+        
+    }
     
     
     var body: some View {
@@ -36,6 +42,8 @@ struct MLocationMap: View {
                     let coordinates = CGPoint(x: coords.x, y: coords.y - 125)
                     location = reader.convert(coordinates, from: .local)
                     getLocationNameAndSetTimeZone()
+                    settings.customLocationLatitude = location?.latitude
+                    settings.customLocationLongitude = location?.longitude
                 }
             }
             
@@ -53,8 +61,16 @@ struct MLocationMap: View {
                 disabledMessage
             }
         }
-        
         .frame(height: 250)
+        .onAppear {
+            if let customLocationLatitude = settings.customLocationLatitude,
+                let customLocationLongitude = settings.customLocationLongitude {
+                location = CLLocationCoordinate2D(latitude: customLocationLatitude,
+                                                  longitude: customLocationLongitude)
+                getLocationNameAndSetTimeZone()
+            }
+            
+        }
     }
     
     var disabledMessage: some View {
@@ -92,7 +108,7 @@ struct MLocationMap: View {
             }
             
             if let placemark = placemarks?.first, let timeZone = placemark.timeZone {
-                self.timeZone = timeZone.identifier
+                settings.customTimeZone = timeZone.identifier
             }
         }
     }

@@ -11,7 +11,8 @@ struct MNotificationPicker: View {
     
     var name: String
     @Binding var setting: String
-    @StateObject private var audioPlayer = AudioPlayer()
+    @ObservedObject var audioPlayer: AudioPlayer
+    var allPlayers: [AudioPlayer]
     
     var body: some View {
         HStack {
@@ -41,8 +42,17 @@ struct MNotificationPicker: View {
         if player.isPlaying {
             player.stop()
         } else {
+            stopAllPlayersExcept(player)
             player.audio = athan
             player.play()
+        }
+    }
+    
+    private func stopAllPlayersExcept(_ playerToExclude: AudioPlayer) {
+        for player in allPlayers {
+            if player !== playerToExclude {
+                player.stop()
+            }
         }
     }
 }
