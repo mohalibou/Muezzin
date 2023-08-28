@@ -22,19 +22,19 @@ struct MNotificationPicker: View {
             Button(audioPlayer.isPlaying ? "Stop" : "Play") {
                 playAthan(setting, with: audioPlayer)
             }
-            .disabled(setting == "none" ? true : false)
+            .disabled(setting == Sound.none ? true : false)
         }
     }
     
     var selection: some View {
         Group {
-            Text("None").tag("none")
+            Text("None").tag(Sound.none)
             Divider()
-            if name == "Fajr" { Text("Alafasy (Fajr)").tag("athan1_fajr") }
-            Text("Alafasy").tag("athan1")
-            Text("Mullah").tag("athan2")
-            Text("Al-Qatami").tag("athan3")
-            Text("Güneşdoğdu").tag("athan4")
+            if name == "Fajr" { Text("Alafasy (Fajr)").tag(Sound.athan1Fajr) }
+            Text("Alafasy").tag(Sound.athan1)
+            Text("Mullah").tag(Sound.athan2)
+            Text("Al-Qatami").tag(Sound.athan3)
+            Text("Güneşdoğdu").tag(Sound.athan4)
         }
     }
     

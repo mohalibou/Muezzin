@@ -32,6 +32,7 @@
 		553385BD2A99392400B86A65 /* MNotificationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385BC2A99392400B86A65 /* MNotificationPicker.swift */; };
 		553385BF2A99666600B86A65 /* MuezzinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385BE2A99666600B86A65 /* MuezzinViewModel.swift */; };
 		553385D12A9B0FEC00B86A65 /* Adhan in Frameworks */ = {isa = PBXBuildFile; productRef = 553385D02A9B0FEC00B86A65 /* Adhan */; };
+		553385D42A9C068300B86A65 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385D32A9C068300B86A65 /* Sound.swift */; };
 		5570CF692A96E47E00E22FED /* athan3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5570CF682A96E47E00E22FED /* athan3.mp3 */; };
 		5570CF6B2A96EF0800E22FED /* athan4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5570CF6A2A96EF0800E22FED /* athan4.mp3 */; };
 		55C172CF2A8D493E0022367E /* athan1_fajr.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55C172CD2A8D493E0022367E /* athan1_fajr.mp3 */; };
@@ -66,6 +67,7 @@
 		553385B82A99386300B86A65 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		553385BC2A99392400B86A65 /* MNotificationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNotificationPicker.swift; sourceTree = "<group>"; };
 		553385BE2A99666600B86A65 /* MuezzinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuezzinViewModel.swift; sourceTree = "<group>"; };
+		553385D32A9C068300B86A65 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		5570CF682A96E47E00E22FED /* athan3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = athan3.mp3; sourceTree = "<group>"; };
 		5570CF6A2A96EF0800E22FED /* athan4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = athan4.mp3; sourceTree = "<group>"; };
 		5570CF712A97C0CC00E22FED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -168,6 +170,14 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		553385D22A9C067000B86A65 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				553385D32A9C068300B86A65 /* Sound.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		55C172CC2A8D49240022367E /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +214,7 @@
 				55F8BD3429EDA3F9009D0D4D /* MuezzinApp.swift */,
 				553385AD2A992DAD00B86A65 /* AppSettings.swift */,
 				553385BE2A99666600B86A65 /* MuezzinViewModel.swift */,
+				553385D22A9C067000B86A65 /* Enums */,
 				553385B72A99385800B86A65 /* Managers */,
 				553385B62A99385100B86A65 /* Extensions */,
 				5533859B2A98559F00B86A65 /* Button Styles */,
@@ -308,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				553385D42A9C068300B86A65 /* Sound.swift in Sources */,
 				553385962A98530A00B86A65 /* ButtonsView.swift in Sources */,
 				553385B12A9934FF00B86A65 /* MLocationMap.swift in Sources */,
 				553385A22A98FEFD00B86A65 /* PrayerTimesCell.swift in Sources */,

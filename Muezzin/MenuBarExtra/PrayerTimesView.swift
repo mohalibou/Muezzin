@@ -8,21 +8,32 @@
 import SwiftUI
 
 struct PrayerTimesView: View {
+    
+    //@StateObject private var settings = AppSettings.shared
+    
+    @EnvironmentObject var vm: MuezzinViewModel
+    
     var body: some View {
         VStack {
-            PrayerTimesCell(prayer: "Fajr", time: "6:00 AM")
+            PrayerTimesCell(prayer: "Fajr", time: vm.fajrTime)
             Divider()
-            PrayerTimesCell(prayer: "Duhr", time: "12:00 PM")
+            PrayerTimesCell(prayer: "Duhr", time: vm.duhrTime)
             Divider()
-            PrayerTimesCell(prayer: "Asr", time: "3:00 PM")
+            PrayerTimesCell(prayer: "Asr", time: vm.asrTime)
             Divider()
-            PrayerTimesCell(prayer: "Maghrib", time: "6:00 PM")
+            PrayerTimesCell(prayer: "Maghrib", time: vm.maghribTime)
             Divider()
-            PrayerTimesCell(prayer: "Isha", time: "9:00 PM")
+            PrayerTimesCell(prayer: "Isha", time: vm.ishaTime)
         }
         .padding(.vertical, 3)
         .padding(.horizontal, 6)
         .frame(maxWidth: .infinity)
+        .onAppear {
+            vm.getPrayerTimes()
+        }
+        .onReceive(Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()) { _ in
+            vm.getPrayerTimes()
+        }
         
     }
 }

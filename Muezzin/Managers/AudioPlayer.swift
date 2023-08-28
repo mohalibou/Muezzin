@@ -15,6 +15,7 @@ class AudioPlayer: NSObject, ObservableObject {
             setupPlayer()
         }
     }
+    @Published var nextAudio: String?
     @Published var isPlaying: Bool = false
     
     func setupPlayer() {
@@ -46,6 +47,12 @@ extension AudioPlayer: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if flag {
             isPlaying = false
+            // Check if there's a next audio to play
+            if let next = nextAudio {
+                audio = next
+                play()
+                nextAudio = nil // Reset nextAudio after playing
+            }
         }
     }
 }

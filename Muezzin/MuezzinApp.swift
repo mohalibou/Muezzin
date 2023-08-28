@@ -11,10 +11,13 @@ import SwiftUI
 struct MuezzinApp: App {
     
     @StateObject private var settings = AppSettings.shared
+    var vm = MuezzinViewModel()
     
     var body: some Scene {
         MenuBarExtra {
             MuezzinView()
+                .environmentObject(vm)
+                
         } label: {
             menuBarLabel
         }
