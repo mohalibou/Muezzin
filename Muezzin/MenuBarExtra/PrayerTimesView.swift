@@ -31,9 +31,7 @@ struct PrayerTimesView: View {
         .onAppear {
             vm.getPrayerTimes()
         }
-        .onReceive(Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()) { _ in
-            vm.getPrayerTimes()
-        }
+        
         
     }
 }

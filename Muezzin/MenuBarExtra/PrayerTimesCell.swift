@@ -12,6 +12,8 @@ struct PrayerTimesCell: View {
     var prayer: String
     var time: Date
     
+    @EnvironmentObject var vm: MuezzinViewModel
+    
     @StateObject private var settings = AppSettings.shared
     @StateObject private var audioPlayer = AudioPlayer()
     @State private var isHovering = false
@@ -51,7 +53,7 @@ struct PrayerTimesCell: View {
     }
     
     var notifIcon: String {
-        if audioPlayer.isPlaying {
+        if vm.audioPlayer.isPlaying && vm.audioPlayer.audio == athanSound {
             return "pause.fill"
         } else {
             switch athanSound {

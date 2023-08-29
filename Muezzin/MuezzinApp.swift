@@ -20,6 +20,30 @@ struct MuezzinApp: App {
                 
         } label: {
             menuBarLabel
+                .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { _ in
+                    vm.getPrayerTimes()
+                    
+                    let cal = Calendar(identifier: Calendar.Identifier.gregorian)
+                    let date = cal.dateComponents([.year, .month, .day], from: Date())
+                    
+                    let times = [vm.fajrTime, vm.duhrTime, vm.asrTime, vm.maghribTime, vm.ishaTime]
+                    let sounds = [settings.fajr, settings.duhr, settings.asr, settings.maghrib, settings.isha]
+                    let prayers = ["Fajr", "Duhr", "Asr", "Maghrib", "Isha"]
+                    
+                    print(date)
+                    print("Current time: \(Date().formatted(date: .omitted, time: .standard))")
+                    for i in times.indices {
+                        print("Prayer time:  \(vm.formatter.string(from: times[i])) - \(prayers[i]) - \(settings.customTimeZone)")
+                    }
+                    
+                    for i in times.indices {
+                        if times[i] == Date() && sounds[i] != Sound.none {
+                            print("It's time!")
+                            vm.playAthan(sound: sounds[i])
+                            break
+                        }
+                    }
+                }
         }
         .menuBarExtraStyle(.window)
         

@@ -12,12 +12,24 @@ class MuezzinViewModel: ObservableObject {
     
     var settings = AppSettings.shared
     
-    @Published var islamicDate: (day: Int, month: String, year: String) = (1, "lol", "xd")
+    var audioPlayer = AudioPlayer()
+    
+    var formatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .medium
+        formatter.timeZone = TimeZone(identifier: settings.customTimeZone)!
+        return formatter
+    }
+    
+    @Published var islamicDate: (day: Int, month: String, year: String) = (1, "", "")
     @Published var fajrTime: Date = Date()
+    @Published var sunriseTime: Date = Date()
     @Published var duhrTime: Date = Date()
     @Published var asrTime: Date = Date()
     @Published var maghribTime: Date = Date()
     @Published var ishaTime: Date = Date()
+    @Published var midnightTime: Date = Date()
+    @Published var tahajjudTime: Date = Date()
     
     func getIslamicDate() {
         var calendar = Calendar(identifier: .islamicUmmAlQura)
@@ -52,10 +64,24 @@ class MuezzinViewModel: ObservableObject {
         
         if let prayers = PrayerTimes(coordinates: coordinates, date: date, calculationParameters: params) {
             fajrTime = prayers.fajr
+            sunriseTime = prayers.sunrise
             duhrTime = prayers.dhuhr
             asrTime = prayers.asr
             maghribTime = prayers.maghrib
             ishaTime = prayers.isha
+            
+            if let sunnahs = SunnahTimes(from: prayers) {
+                midnightTime = sunnahs.middleOfTheNight
+                tahajjudTime = sunnahs.lastThirdOfTheNight
+            }
         }
+    }
+    
+    func playAthan(sound: String) {
+        audioPlayer.audio = sound
+        if settings.playDuaAfterAthan {
+            audioPlayer.nextAudio = Sound.dua // Set the name of the next audio file here
+        }
+        audioPlayer.play()
     }
 }
