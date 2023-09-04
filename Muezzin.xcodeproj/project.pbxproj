@@ -42,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		551616852AA64AFC007F6E22 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		552B73472A95751E001216D2 /* athan2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = athan2.mp3; sourceTree = "<group>"; };
 		552B734B2A9578AF001216D2 /* dua.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dua.mp3; sourceTree = "<group>"; };
 		553385882A9850A100B86A65 /* MuezzinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuezzinView.swift; sourceTree = "<group>"; };
@@ -211,6 +212,7 @@
 				5533858F2A9851DE00B86A65 /* Settings */,
 				553385902A9851E300B86A65 /* Misc */,
 				55C172CC2A8D49240022367E /* Sounds */,
+				551616852AA64AFC007F6E22 /* MyPlayground.playground */,
 				55F8BD3829EDA3FA009D0D4D /* Assets.xcassets */,
 				55F8BD3D29EDA3FA009D0D4D /* Muezzin.entitlements */,
 				55F8BD3A29EDA3FA009D0D4D /* Preview Content */,

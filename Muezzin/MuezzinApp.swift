@@ -45,8 +45,8 @@ struct MuezzinApp: App {
     
     var menuBarLabel: some View {
         HStack {
-            Image("kaaba")
-            Text(vm.next)
+            Image(systemName: vm.next.icon)
+            Text(vm.next.time)
         }
     }
 }

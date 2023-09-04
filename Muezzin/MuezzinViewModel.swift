@@ -12,14 +12,16 @@ class MuezzinViewModel: ObservableObject {
     
     @Published var audioPlayer = AudioPlayer()
     @Published var islamicDate = (day: "", month: "", year: "")
+    
     @Published var fajr = (time: Date(), isItTime: false)
     @Published var sunrise = (time: Date(), isItTime: false)
     @Published var duhr = (time: Date(), isItTime: false)
     @Published var asr = (time: Date(), isItTime: false)
     @Published var maghrib = (time: Date(), isItTime: false)
     @Published var isha = (time: Date(), isItTime: false)
+    @Published var tomorrowFajr = (time: Date(), isItTime: false)
     
-    @Published var next: String = ""
+    @Published var next = (icon: "", time: "")
     
     var settings = AppSettings.shared
     
@@ -57,42 +59,56 @@ class MuezzinViewModel: ObservableObject {
         let asrCalculation = settings.asrCalculation
         
         var cal = Calendar(identifier: .gregorian)
-        cal.timeZone = TimeZone(identifier: settings.customTimeZone)!
-        let date = cal.dateComponents([.year, .month, .day], from: Date())
-        let coordinates = Coordinates(latitude: latitude, longitude: longitude)
+        let today = cal.dateComponents([.year, .month, .day], from: Date())
+        
+        let nextDay = cal.date(byAdding: .day, value: 1, to: Date()) ?? Date()
+        let tomorrow = cal.dateComponents([.year, .month, .day], from: nextDay)
+        
+        let coords = Coordinates(latitude: latitude, longitude: longitude)
         var params = calculationMethod.params
         params.madhab = asrCalculation
         
-        if let prayers = PrayerTimes(coordinates: coordinates, date: date, calculationParameters: params) {
-            fajr.time = prayers.fajr
-            sunrise.time = prayers.sunrise
-            duhr.time = prayers.dhuhr
-            asr.time = prayers.asr
-            maghrib.time = prayers.maghrib
-            isha.time = prayers.isha
+        if let todaysPrayers = PrayerTimes(coordinates: coords, date: today, calculationParameters: params), 
+            let tomorrowsPrayers = PrayerTimes(coordinates: coords, date: tomorrow, calculationParameters: params) {
             
-            switch prayers.nextPrayer() {
+            fajr.time = todaysPrayers.fajr
+            sunrise.time = todaysPrayers.sunrise
+            duhr.time = todaysPrayers.dhuhr
+            asr.time = todaysPrayers.asr
+            maghrib.time = todaysPrayers.maghrib
+            isha.time = todaysPrayers.isha
+            tomorrowFajr.time = tomorrowsPrayers.fajr
+            
+            switch todaysPrayers.nextPrayer() {
             case .fajr:
-                next = "Fajr \(formatter.string(from: fajr.time))"
+                next.icon = "light.max"
+                next.time = "Fajr \(formatter.string(from: fajr.time))"
             case .sunrise:
-                next = "Sunrise \(formatter.string(from: sunrise.time))"
+                next.icon = "sunrise.fill"
+                next.time = "Sunrise \(formatter.string(from: sunrise.time))"
             case .dhuhr:
-                next = "Duhr \(formatter.string(from: duhr.time))"
+                next.icon = "sun.max.fill"
+                next.time = "Duhr \(formatter.string(from: duhr.time))"
             case .asr:
-                next = "Asr \(formatter.string(from: asr.time))"
+                next.icon = "sun.min.fill"
+                next.time = "Asr \(formatter.string(from: asr.time))"
             case .maghrib:
-                next = "Maghrib \(formatter.string(from: maghrib.time))"
+                next.icon = "sunset.fill"
+                next.time = "Maghrib \(formatter.string(from: maghrib.time))"
             case .isha:
-                next = "Isha \(formatter.string(from: isha.time))"
+                next.icon = "moon.stars.fill"
+                next.time = "Isha \(formatter.string(from: isha.time))"
             case .none:
-                next = "None"
+                next.icon = "light.max"
+                next.time = "Fajr \(formatter.string(from: tomorrowFajr.time))"
             }
             
-            if let sunnahs = SunnahTimes(from: prayers) {
+            if let sunnahs = SunnahTimes(from: todaysPrayers) {
                 //midnightTime = sunnahs.middleOfTheNight
                 //tahajjudTime = sunnahs.lastThirdOfTheNight
             }
         }
+        
     }
     
     func checkIfItsTime() {
@@ -107,14 +123,14 @@ class MuezzinViewModel: ObservableObject {
         let currentTime = Date().formatted(date: .omitted, time: .standard)
         
         print("------------------------")
-        print("\(prayers[0]) - Fajr    - \(fajr.time)")
-        print("\(prayers[1]) - Sunrise - \(sunrise.time)")
-        print("\(prayers[2]) - Duhr    - \(duhr.time)")
-        print("\(prayers[3]) - Asr     - \(asr.time)")
-        print("\(prayers[4]) - Maghrib - \(maghrib.time)")
-        print("\(prayers[5]) - Isha    - \(isha.time)")
+        print("\(prayers[0]) - Fajr")
+        print("\(prayers[1]) - Sunrise")
+        print("\(prayers[2]) - Duhr")
+        print("\(prayers[3]) - Asr")
+        print("\(prayers[4]) - Maghrib")
+        print("\(prayers[5]) - Isha")
         print("\(formatterMedium.string(from: Date())) - Current Time")
-        print(next)
+        print(next.time)
         
         
         if let index = prayers.firstIndex(of: currentTime) {
