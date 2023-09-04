@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		551616872AA65AC9007F6E22 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551616862AA65AC9007F6E22 /* Name.swift */; };
+		551616892AA65AD9007F6E22 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551616882AA65AD9007F6E22 /* Time.swift */; };
 		552B73492A95751E001216D2 /* athan2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 552B73472A95751E001216D2 /* athan2.mp3 */; };
 		552B734C2A9578AF001216D2 /* dua.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 552B734B2A9578AF001216D2 /* dua.mp3 */; };
 		553385892A9850A100B86A65 /* MuezzinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385882A9850A100B86A65 /* MuezzinView.swift */; };
@@ -43,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		551616852AA64AFC007F6E22 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		551616862AA65AC9007F6E22 /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
+		551616882AA65AD9007F6E22 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		552B73472A95751E001216D2 /* athan2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = athan2.mp3; sourceTree = "<group>"; };
 		552B734B2A9578AF001216D2 /* dua.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dua.mp3; sourceTree = "<group>"; };
 		553385882A9850A100B86A65 /* MuezzinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuezzinView.swift; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				553385D32A9C068300B86A65 /* Sound.swift */,
+				551616882AA65AD9007F6E22 /* Time.swift */,
+				551616862AA65AC9007F6E22 /* Name.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -316,6 +322,8 @@
 				553385A22A98FEFD00B86A65 /* PrayerTimesCell.swift in Sources */,
 				553385A62A9901FA00B86A65 /* SettingsLocationView.swift in Sources */,
 				553385942A98530200B86A65 /* DateView.swift in Sources */,
+				551616872AA65AC9007F6E22 /* Name.swift in Sources */,
+				551616892AA65AD9007F6E22 /* Time.swift in Sources */,
 				5533858D2A98514B00B86A65 /* AboutView.swift in Sources */,
 				553385A82A99020100B86A65 /* SettingsPrayerTimesView.swift in Sources */,
 				5533858B2A9850CC00B86A65 /* SettingsView.swift in Sources */,

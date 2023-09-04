@@ -18,8 +18,8 @@ final class AppSettings: ObservableObject {
     @AppStorage("startAtLogin") var startAtLogin: Bool = false
     @AppStorage("displayIcon") var displayIcon: Bool = true
     @AppStorage("displayNextPrayer") var displayNextPrayer: Bool = true
-    @AppStorage("prayerTime") var prayerTime: String = "time"
-    @AppStorage("prayerName") var prayerName: String = "full"
+    @AppStorage("prayerName") var prayerName: Name = .full
+    @AppStorage("prayerTime") var prayerTime: Time = .time
     
     // Location Settings
     //@AppStorage("useCurrentLocation") var useCurrentLocation: Bool = false

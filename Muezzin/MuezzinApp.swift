@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct MuezzinApp: App {
     
+    @StateObject private var settings = AppSettings.shared
     @StateObject private var vm = MuezzinViewModel()
     
     let timer1 = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -19,7 +20,7 @@ struct MuezzinApp: App {
         MenuBarExtra {
             MuezzinView()
                 .environmentObject(vm)
-                
+            
         } label: {
             menuBarLabel
                 .onReceive(timer1) { _ in
@@ -45,8 +46,8 @@ struct MuezzinApp: App {
     
     var menuBarLabel: some View {
         HStack {
-            Image(systemName: vm.next.icon)
-            Text(vm.next.time)
+            settings.displayIcon ? Image(systemName: vm.next.icon) : nil
+            settings.displayNextPrayer ? Text(vm.next.time) : nil
         }
     }
 }

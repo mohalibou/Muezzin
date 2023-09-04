@@ -19,9 +19,6 @@ formatter.timeStyle = .medium
 formatter.timeZone = TimeZone(identifier: "America/Los_Angeles")!
 
 let today = PrayerTimes(coordinates: coordinates, date: date, calculationParameters: params)
-
-
-
 let tomorrow = PrayerTimes(coordinates: coordinates, date: date2, calculationParameters: params)
 
 print("Fajr    \(formatter.string(from: today!.fajr))")

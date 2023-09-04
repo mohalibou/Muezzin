@@ -58,7 +58,7 @@ class MuezzinViewModel: ObservableObject {
         let calculationMethod = settings.calculationMethod
         let asrCalculation = settings.asrCalculation
         
-        var cal = Calendar(identifier: .gregorian)
+        let cal = Calendar(identifier: .gregorian)
         let today = cal.dateComponents([.year, .month, .day], from: Date())
         
         let nextDay = cal.date(byAdding: .day, value: 1, to: Date()) ?? Date()
@@ -79,28 +79,31 @@ class MuezzinViewModel: ObservableObject {
             isha.time = todaysPrayers.isha
             tomorrowFajr.time = tomorrowsPrayers.fajr
             
-            switch todaysPrayers.nextPrayer() {
+            let nextPrayer = todaysPrayers.nextPrayer()
+            let countdown = todaysPrayers.time(for: nextPrayer!)
+            
+            switch nextPrayer {
             case .fajr:
                 next.icon = "light.max"
-                next.time = "Fajr \(formatter.string(from: fajr.time))"
+                next.time = "\(formatPrayerName("Isha")) \(formatPrayerTime(fajr.time, countdown))"
             case .sunrise:
                 next.icon = "sunrise.fill"
-                next.time = "Sunrise \(formatter.string(from: sunrise.time))"
+                next.time = "\(formatPrayerName("Sunrise")) \(formatPrayerTime(sunrise.time, countdown))"
             case .dhuhr:
                 next.icon = "sun.max.fill"
-                next.time = "Duhr \(formatter.string(from: duhr.time))"
+                next.time = "\(formatPrayerName("Duhr")) \(formatPrayerTime(duhr.time, countdown))"
             case .asr:
                 next.icon = "sun.min.fill"
-                next.time = "Asr \(formatter.string(from: asr.time))"
+                next.time = "\(formatPrayerName("Asr")) \(formatPrayerTime(asr.time, countdown))"
             case .maghrib:
                 next.icon = "sunset.fill"
-                next.time = "Maghrib \(formatter.string(from: maghrib.time))"
+                next.time = "\(formatPrayerName("Maghrib")) \(formatPrayerTime(maghrib.time, countdown))"
             case .isha:
                 next.icon = "moon.stars.fill"
-                next.time = "Isha \(formatter.string(from: isha.time))"
+                next.time = "\(formatPrayerName("Isha")) \(formatPrayerTime(isha.time, countdown))"
             case .none:
                 next.icon = "light.max"
-                next.time = "Fajr \(formatter.string(from: tomorrowFajr.time))"
+                next.time = "\(formatPrayerName("Fajr")) \(formatPrayerTime(tomorrowFajr.time, countdown))"
             }
             
             if let sunnahs = SunnahTimes(from: todaysPrayers) {
@@ -199,5 +202,28 @@ class MuezzinViewModel: ObservableObject {
     
     func stopAthan() {
         audioPlayer.stop()
+    }
+    
+    private func formatPrayerName(_ name: String) -> String {
+        if settings.prayerName == .full {
+            return name
+        } else if settings.prayerName == .abbreviation {
+            return String(name.first!)
+        } else {
+            return ""
+        }
+    }
+    
+    private func formatPrayerTime(_ time: Date, _ countdown: Date) -> String {
+        if settings.prayerTime == .time {
+            return formatter.string(from: time)
+        } else if settings.prayerTime == .countdown {
+            let timeRemaining = Date().distance(to: countdown)
+            let hours = Int(timeRemaining) / 3600
+            let minutes = (Int(timeRemaining) % 3600 + 60) / 60
+            return "-\(String(format: "%02d:%02d", hours, minutes))"
+        } else {
+            return ""
+        }
     }
 }
