@@ -10,8 +10,10 @@ import SwiftUI
 @main
 struct MuezzinApp: App {
     
-    @StateObject private var settings = AppSettings.shared
-    var vm = MuezzinViewModel()
+    @StateObject private var vm = MuezzinViewModel()
+    
+    let timer1 = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    let timer2 = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     
     var body: some Scene {
         MenuBarExtra {
@@ -20,35 +22,19 @@ struct MuezzinApp: App {
                 
         } label: {
             menuBarLabel
-                .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { _ in
+                .onReceive(timer1) { _ in
+                    vm.checkIfItsTime()
+                }
+                .onReceive(timer2) { _ in
+                    vm.getIslamicDate()
                     vm.getPrayerTimes()
-                    
-                    let cal = Calendar(identifier: Calendar.Identifier.gregorian)
-                    let date = cal.dateComponents([.year, .month, .day], from: Date())
-                    
-                    let times = [vm.fajrTime, vm.duhrTime, vm.asrTime, vm.maghribTime, vm.ishaTime]
-                    let sounds = [settings.fajr, settings.duhr, settings.asr, settings.maghrib, settings.isha]
-                    let prayers = ["Fajr", "Duhr", "Asr", "Maghrib", "Isha"]
-                    
-                    print(date)
-                    print("Current time: \(Date().formatted(date: .omitted, time: .standard))")
-                    for i in times.indices {
-                        print("Prayer time:  \(vm.formatter.string(from: times[i])) - \(prayers[i]) - \(settings.customTimeZone)")
-                    }
-                    
-                    for i in times.indices {
-                        if times[i] == Date() && sounds[i] != Sound.none {
-                            print("It's time!")
-                            vm.playAthan(sound: sounds[i])
-                            break
-                        }
-                    }
                 }
         }
         .menuBarExtraStyle(.window)
         
         Settings {
             SettingsView()
+                .environmentObject(vm)
         }
         
         Window("", id: "about") {
@@ -59,12 +45,8 @@ struct MuezzinApp: App {
     
     var menuBarLabel: some View {
         HStack {
-            if settings.displayIcon {
-                Image(systemName: "person")
-            }
-            if settings.displayNextPrayer {
-                Text("Hello")
-            }
+            Image("kaaba")
+            Text(vm.next)
         }
     }
 }

@@ -16,7 +16,6 @@
 		553385962A98530A00B86A65 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385952A98530A00B86A65 /* ButtonsView.swift */; };
 		553385982A98531000B86A65 /* PrayerTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385972A98531000B86A65 /* PrayerTimesView.swift */; };
 		5533859A2A98531800B86A65 /* NextPrayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385992A98531800B86A65 /* NextPrayerView.swift */; };
-		5533859D2A9855A900B86A65 /* MButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5533859C2A9855A900B86A65 /* MButtonStyle.swift */; };
 		553385A02A98562E00B86A65 /* MButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5533859F2A98562E00B86A65 /* MButton.swift */; };
 		553385A22A98FEFD00B86A65 /* PrayerTimesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385A12A98FEFD00B86A65 /* PrayerTimesCell.swift */; };
 		553385A42A9901F400B86A65 /* SettingsGeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385A32A9901F400B86A65 /* SettingsGeneralView.swift */; };
@@ -52,7 +51,6 @@
 		553385952A98530A00B86A65 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
 		553385972A98531000B86A65 /* PrayerTimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimesView.swift; sourceTree = "<group>"; };
 		553385992A98531800B86A65 /* NextPrayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPrayerView.swift; sourceTree = "<group>"; };
-		5533859C2A9855A900B86A65 /* MButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MButtonStyle.swift; sourceTree = "<group>"; };
 		5533859F2A98562E00B86A65 /* MButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MButton.swift; sourceTree = "<group>"; };
 		553385A12A98FEFD00B86A65 /* PrayerTimesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimesCell.swift; sourceTree = "<group>"; };
 		553385A32A9901F400B86A65 /* SettingsGeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGeneralView.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 				553385932A98530200B86A65 /* DateView.swift */,
 				553385952A98530A00B86A65 /* ButtonsView.swift */,
 				553385972A98531000B86A65 /* PrayerTimesView.swift */,
-				553385A12A98FEFD00B86A65 /* PrayerTimesCell.swift */,
 				553385992A98531800B86A65 /* NextPrayerView.swift */,
 				5533859E2A98562300B86A65 /* Custom Components */,
 			);
@@ -128,17 +125,10 @@
 			path = Misc;
 			sourceTree = "<group>";
 		};
-		5533859B2A98559F00B86A65 /* Button Styles */ = {
-			isa = PBXGroup;
-			children = (
-				5533859C2A9855A900B86A65 /* MButtonStyle.swift */,
-			);
-			path = "Button Styles";
-			sourceTree = "<group>";
-		};
 		5533859E2A98562300B86A65 /* Custom Components */ = {
 			isa = PBXGroup;
 			children = (
+				553385A12A98FEFD00B86A65 /* PrayerTimesCell.swift */,
 				5533859F2A98562E00B86A65 /* MButton.swift */,
 			);
 			path = "Custom Components";
@@ -212,12 +202,11 @@
 			children = (
 				5570CF712A97C0CC00E22FED /* Info.plist */,
 				55F8BD3429EDA3F9009D0D4D /* MuezzinApp.swift */,
-				553385AD2A992DAD00B86A65 /* AppSettings.swift */,
 				553385BE2A99666600B86A65 /* MuezzinViewModel.swift */,
+				553385AD2A992DAD00B86A65 /* AppSettings.swift */,
 				553385D22A9C067000B86A65 /* Enums */,
 				553385B72A99385800B86A65 /* Managers */,
 				553385B62A99385100B86A65 /* Extensions */,
-				5533859B2A98559F00B86A65 /* Button Styles */,
 				5533858E2A9851D500B86A65 /* MenuBarExtra */,
 				5533858F2A9851DE00B86A65 /* Settings */,
 				553385902A9851E300B86A65 /* Misc */,
@@ -334,7 +323,6 @@
 				553385BF2A99666600B86A65 /* MuezzinViewModel.swift in Sources */,
 				5533859A2A98531800B86A65 /* NextPrayerView.swift in Sources */,
 				553385AA2A99020700B86A65 /* SettingsNotificationsView.swift in Sources */,
-				5533859D2A9855A900B86A65 /* MButtonStyle.swift in Sources */,
 				553385982A98531000B86A65 /* PrayerTimesView.swift in Sources */,
 				553385A02A98562E00B86A65 /* MButton.swift in Sources */,
 				55F8BD3529EDA3F9009D0D4D /* MuezzinApp.swift in Sources */,

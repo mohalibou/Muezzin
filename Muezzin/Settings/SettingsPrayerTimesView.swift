@@ -12,9 +12,9 @@ struct SettingsPrayerTimesView: View {
     
     @StateObject private var settings = AppSettings.shared
     
-    @State private var flag1 = false
-    @State private var flag2 = false
-    @State private var flag3 = false
+    @State private var showSunriseTime = false
+    @State private var showMidnightTime = false
+    @State private var showTahajjudTime = false
     
     var body: some View {
         Form {
@@ -32,9 +32,9 @@ struct SettingsPrayerTimesView: View {
             }
             
             Section {
-                Toggle("Show sunrise time", isOn: $flag1)
-                Toggle("Show midnight time", isOn: $flag2)
-                Toggle("Show tahajjud time", isOn: $flag3)
+                Toggle("Show sunrise time", isOn: $showSunriseTime)
+                Toggle("Show midnight time", isOn: $showMidnightTime)
+                Toggle("Show tahajjud time", isOn: $showTahajjudTime)
             }
         }
         .formStyle(.grouped)

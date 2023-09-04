@@ -7,12 +7,12 @@
 
 import Foundation
 
-enum Sound {
-    static let athan1Fajr = "athan1_fajr"
-    static let athan1 = "athan1"
-    static let athan2 = "athan2"
-    static let athan3 = "athan3"
-    static let athan4 = "athan4"
-    static let dua = "dua"
-    static let none = "none"
+enum Sound: String {
+    case athan1Fajr = "athan1_fajr"
+    case athan1 = "athan1"
+    case athan2 = "athan2"
+    case athan3 = "athan3"
+    case athan4 = "athan4"
+    case dua = "dua"
+    case none = "none"
 }

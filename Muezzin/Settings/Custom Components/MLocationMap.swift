@@ -5,22 +5,22 @@
 //  Created by Mohamed Ali Boutaleb on 8/25/23.
 //
 
-import CoreLocation
+import Adhan
 import MapKit
 import SwiftUI
 
 struct MLocationMap: View {
-    
-    @StateObject var settings = AppSettings.shared
-    
     @Binding var disabled: Bool
+    @Binding var latitude: Double
+    @Binding var longitude: Double
+    @Binding var timeZone: String
     
     @State private var location: CLLocationCoordinate2D?
-    @State var locationName: String = "N/A"
+    @State private var locationName: String?
     
     var region: MKCoordinateRegion {
-        MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: settings.customLocationLatitude ?? 25,
-                                                          longitude: settings.customLocationLongitude ?? 46),
+        MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitude != 0 ? latitude : 25,
+                                                          longitude: longitude != 0 ? longitude : 46),
                            span: MKCoordinateSpan(latitudeDelta: 30,
                                                   longitudeDelta: 30))
         
@@ -41,9 +41,9 @@ struct MLocationMap: View {
                 .onTapGesture { coords in
                     let coordinates = CGPoint(x: coords.x, y: coords.y - 125)
                     location = reader.convert(coordinates, from: .local)
+                    latitude = location!.latitude
+                    longitude = location!.longitude
                     getLocationNameAndSetTimeZone()
-                    settings.customLocationLatitude = location?.latitude
-                    settings.customLocationLongitude = location?.longitude
                 }
             }
             
@@ -56,17 +56,15 @@ struct MLocationMap: View {
                 Spacer()
             }
             
-            
             if disabled {
                 disabledMessage
             }
         }
         .frame(height: 250)
         .onAppear {
-            if let customLocationLatitude = settings.customLocationLatitude,
-                let customLocationLongitude = settings.customLocationLongitude {
-                location = CLLocationCoordinate2D(latitude: customLocationLatitude,
-                                                  longitude: customLocationLongitude)
+            if longitude != 0 && latitude != 0 {
+                location = CLLocationCoordinate2D(latitude: latitude,
+                                                  longitude: longitude)
                 getLocationName()
             }
             
@@ -85,7 +83,7 @@ struct MLocationMap: View {
     }
     
     var locationMessage: some View {
-        Text("Location: \(locationName)")
+        Text("Location: \(locationName ?? "N/A")")
             .padding(8)
             .overlay(Color.black.opacity(disabled ? 0.6 : 0))
             .background {
@@ -120,11 +118,9 @@ struct MLocationMap: View {
             } else {
                 locationName = "Unknown"
             }
-            
             if let placemark = placemarks?.first, let timeZone = placemark.timeZone {
-                settings.customTimeZone = timeZone.identifier
+                self.timeZone = timeZone.identifier
             }
         }
     }
-    
 }

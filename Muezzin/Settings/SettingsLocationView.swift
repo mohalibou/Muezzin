@@ -11,25 +11,21 @@ import SwiftUI
 struct SettingsLocationView: View {
     
     @StateObject private var settings = AppSettings.shared
-    
-    @State private var flag = false
+
+    @State private var useCurrentLocation = false
     
     var body: some View {
         Form {
             Section {
-                Toggle("Use current location", isOn: $flag)
+                Toggle("Use current location", isOn: $useCurrentLocation)
             }
             
             Section("Prayer times location") {
-                MLocationMap(disabled: $flag)
+                MLocationMap(disabled: $useCurrentLocation, latitude: settings.$customLocationLatitude, longitude: settings.$customLocationLongitude, timeZone: settings.$customTimeZone)
                 MTimeZonePicker(timeZone: settings.$customTimeZone)
             }
-            .disabled(flag)
+            .disabled(useCurrentLocation)
         }
         .formStyle(.grouped)
     }
-}
-
-#Preview {
-    SettingsLocationView()
 }

@@ -9,19 +9,18 @@ import SwiftUI
 
 struct PrayerTimesCell: View {
     
-    var prayer: String
-    var time: Date
-    
+    @StateObject private var settings = AppSettings.shared
     @EnvironmentObject var vm: MuezzinViewModel
     
-    @StateObject private var settings = AppSettings.shared
-    @StateObject private var audioPlayer = AudioPlayer()
-    @State private var isHovering = false
+    var prayer: String
+    @Binding var time: (time: Date, isItTime: Bool)
     
     var image: String {
         switch prayer {
         case "Fajr":
             return "light.max"
+        case "Sunrise":
+            return "sunrise.fill"
         case "Duhr":
             return "sun.max.fill"
         case "Asr":
@@ -35,69 +34,43 @@ struct PrayerTimesCell: View {
         }
     }
     
-    var athanSound: String {
+    var athanSound: Sound {
         switch prayer {
         case "Fajr":
-            return settings.fajr
+            return settings.fajrAthan
+        case "Sunrise":
+            return settings.fajrAthan
         case "Duhr":
-            return settings.duhr
+            return settings.duhrAthan
         case "Asr":
-            return settings.asr
+            return settings.asrAthan
         case "Maghrib":
-            return settings.maghrib
+            return settings.maghribAthan
         case "Isha":
-            return settings.isha
+            return settings.ishaAthan
         default:
-            return ""
+            return Sound.none
         }
     }
     
-    var notifIcon: String {
-        if vm.audioPlayer.isPlaying && vm.audioPlayer.audio == athanSound {
-            return "pause.fill"
+    var notifIcon: (name: String, color: Color) {
+        if time.isItTime && vm.audioPlayer.isPlaying {
+            return ("pause.fill", .accentColor)
         } else {
             switch athanSound {
-            case "none":
-                return "bell.slash"
+            case Sound.none:
+                return ("bell.slash", .red)
             default:
-                return "bell.fill"
+                return ("bell.fill", .primary)
             }
         }
-        
     }
-    
-    var color: Color {
-        switch notifIcon {
-        case "bell.slash":
-            return .red
-        case "bell.fill":
-            return .primary
-        case "pause.fill":
-            return .accentColor
-        default:
-            return .primary
-        }
-    }
-    
-    var formatter1: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.timeStyle = .short
-        formatter.timeZone = TimeZone(identifier: settings.customTimeZone)!
-        return formatter
-    }
-    
-    var formatter2: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.timeStyle = .medium
-        formatter.timeZone = TimeZone(identifier: settings.customTimeZone)!
-        return formatter
-    }
-    
     
     var body: some View {
         LabeledContent {
             Spacer()
-            Text(formatter1.string(from: time))
+            Text(vm.formatter.string(from: time.time))
+            //Text(time.time.formatted(date: .omitted, time: .shortened))
             notifButton
         } label: {
             HStack {
@@ -108,31 +81,23 @@ struct PrayerTimesCell: View {
             }
         }
         .font(.title3)
-        .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { _ in
-            print("Current time: \(Date().formatted(date: .omitted, time: .standard))")
-            print("Prayer time:  \(formatter2.string(from: time)) - \(prayer) - \(settings.customTimeZone)")
-            if Date().formatted(date: .omitted, time: .standard) == formatter2.string(from: time) {
-                print("It's time!")
-                if athanSound != Sound.none {
-                    playAthan(athanSound, with: audioPlayer)
-                }
-            }
-        }
     }
     
+    @State private var isHovering = false
     var notifButton: some View {
         Button {
-            if audioPlayer.isPlaying {
-                audioPlayer.stop()
+            if vm.audioPlayer.isPlaying {
+                time.isItTime = false
+                vm.audioPlayer.stop()
             } else {
                 toggle()
             }
         } label: {
-            Image(systemName: notifIcon)
+            Image(systemName: notifIcon.name)
                 .scaledToFit()
                 .frame(width: 20)
                 .symbolRenderingMode(.palette)
-                .foregroundStyle(color, .primary)
+                .foregroundStyle(notifIcon.color, .primary)
                 .shadow(color: .accentColor.opacity(isHovering ? 1 : 0), radius: 6, x: 0, y: 0)
         }
         .buttonStyle(.plain)
@@ -146,25 +111,17 @@ struct PrayerTimesCell: View {
     func toggle() {
         switch prayer {
         case "Fajr":
-            settings.fajr = (settings.fajr == "none" ? "athan1_fajr" : "none")
+            settings.fajrAthan = (settings.fajrAthan == Sound.none ? Sound.athan1Fajr : Sound.none)
         case "Duhr":
-            settings.duhr = (settings.duhr == "none" ? "athan1" : "none")
+            settings.duhrAthan = (settings.duhrAthan == Sound.none ? Sound.athan1 : Sound.none)
         case "Asr":
-            settings.asr = (settings.asr == "none" ? "athan1" : "none")
+            settings.asrAthan = (settings.asrAthan == Sound.none ? Sound.athan1 : Sound.none)
         case "Maghrib":
-            settings.maghrib = (settings.maghrib == "none" ? "athan1" : "none")
+            settings.maghribAthan = (settings.maghribAthan == Sound.none ? Sound.athan1 : Sound.none)
         case "Isha":
-            settings.isha = (settings.isha == "none" ? "athan1" : "none")
+            settings.ishaAthan = (settings.ishaAthan == Sound.none ? Sound.athan1 : Sound.none)
         default:
             break
         }
-    }
-    
-    private func playAthan(_ athan: String, with player: AudioPlayer) {
-        player.audio = athan
-        if settings.playDuaAfterAthan {
-            player.nextAudio = Sound.dua // Set the name of the next audio file here
-        }
-        player.play()
     }
 }

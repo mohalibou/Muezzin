@@ -9,50 +9,41 @@ import SwiftUI
 
 struct MNotificationPicker: View {
     
+    @EnvironmentObject private var vm: MuezzinViewModel
+    
     var name: String
-    @Binding var setting: String
+    @Binding var selection: Sound
     @ObservedObject var audioPlayer: AudioPlayer
-    var allPlayers: [AudioPlayer]
+    var allAudioPlayers: [AudioPlayer]
     
     var body: some View {
         HStack {
-            Picker(name, selection: $setting) {
-                selection
+            Picker(name, selection: $selection) {
+                Text("None").tag(Sound.none)
+                Divider()
+                if name == "Fajr" { Text("Alafasy (Fajr)").tag(Sound.athan1Fajr) }
+                Text("Alafasy").tag(Sound.athan1)
+                Text("Mullah").tag(Sound.athan2)
+                Text("Al-Qatami").tag(Sound.athan3)
+                Text("Güneşdoğdu").tag(Sound.athan4)
             }
             Button(audioPlayer.isPlaying ? "Stop" : "Play") {
-                playAthan(setting, with: audioPlayer)
+                audioPlayer.isPlaying ? stopAthan() : playAthan()
             }
-            .disabled(setting == Sound.none ? true : false)
         }
     }
     
-    var selection: some View {
-        Group {
-            Text("None").tag(Sound.none)
-            Divider()
-            if name == "Fajr" { Text("Alafasy (Fajr)").tag(Sound.athan1Fajr) }
-            Text("Alafasy").tag(Sound.athan1)
-            Text("Mullah").tag(Sound.athan2)
-            Text("Al-Qatami").tag(Sound.athan3)
-            Text("Güneşdoğdu").tag(Sound.athan4)
+    private func playAthan() {
+        allAudioPlayers.forEach { audioPlayer in
+            audioPlayer.stop()
         }
+        audioPlayer.audio = selection
+        audioPlayer.play()
     }
     
-    private func playAthan(_ athan: String, with player: AudioPlayer) {
-        if player.isPlaying {
-            player.stop()
-        } else {
-            stopAllPlayersExcept(player)
-            player.audio = athan
-            player.play()
-        }
-    }
-    
-    private func stopAllPlayersExcept(_ playerToExclude: AudioPlayer) {
-        for player in allPlayers {
-            if player !== playerToExclude {
-                player.stop()
-            }
+    private func stopAthan() {
+        allAudioPlayers.forEach { audioPlayer in
+            audioPlayer.stop()
         }
     }
 }
