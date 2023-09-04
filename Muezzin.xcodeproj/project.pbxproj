@@ -9,81 +9,73 @@
 /* Begin PBXBuildFile section */
 		552B73492A95751E001216D2 /* athan2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 552B73472A95751E001216D2 /* athan2.mp3 */; };
 		552B734C2A9578AF001216D2 /* dua.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 552B734B2A9578AF001216D2 /* dua.mp3 */; };
-		553385782A97E56C00B86A65 /* Adhan in Frameworks */ = {isa = PBXBuildFile; productRef = 553385772A97E56C00B86A65 /* Adhan */; };
-		5533857A2A97F2FB00B86A65 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385792A97F2FA00B86A65 /* GlobalFunctions.swift */; };
-		5533857D2A9823DB00B86A65 /* Athan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5533857C2A9823DB00B86A65 /* Athan.swift */; };
-		5533857F2A9826F300B86A65 /* PrayerTimesCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5533857E2A9826F300B86A65 /* PrayerTimesCell2.swift */; };
-		553385852A983B3200B86A65 /* MNotificationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385842A983B3200B86A65 /* MNotificationPicker.swift */; };
-		553385872A984C5A00B86A65 /* ReverseGeocodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385862A984C5A00B86A65 /* ReverseGeocodeType.swift */; };
-		554C888F2A954AAD00C2B6C7 /* MLocationMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554C888E2A954AAD00C2B6C7 /* MLocationMap.swift */; };
+		553385892A9850A100B86A65 /* MuezzinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385882A9850A100B86A65 /* MuezzinView.swift */; };
+		5533858B2A9850CC00B86A65 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5533858A2A9850CC00B86A65 /* SettingsView.swift */; };
+		5533858D2A98514B00B86A65 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5533858C2A98514B00B86A65 /* AboutView.swift */; };
+		553385942A98530200B86A65 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385932A98530200B86A65 /* DateView.swift */; };
+		553385962A98530A00B86A65 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385952A98530A00B86A65 /* ButtonsView.swift */; };
+		553385982A98531000B86A65 /* PrayerTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385972A98531000B86A65 /* PrayerTimesView.swift */; };
+		5533859A2A98531800B86A65 /* NextPrayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385992A98531800B86A65 /* NextPrayerView.swift */; };
+		553385A02A98562E00B86A65 /* MButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5533859F2A98562E00B86A65 /* MButton.swift */; };
+		553385A22A98FEFD00B86A65 /* PrayerTimesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385A12A98FEFD00B86A65 /* PrayerTimesCell.swift */; };
+		553385A42A9901F400B86A65 /* SettingsGeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385A32A9901F400B86A65 /* SettingsGeneralView.swift */; };
+		553385A62A9901FA00B86A65 /* SettingsLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385A52A9901FA00B86A65 /* SettingsLocationView.swift */; };
+		553385A82A99020100B86A65 /* SettingsPrayerTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385A72A99020100B86A65 /* SettingsPrayerTimesView.swift */; };
+		553385AA2A99020700B86A65 /* SettingsNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385A92A99020700B86A65 /* SettingsNotificationsView.swift */; };
+		553385AC2A99020C00B86A65 /* SettingsAdvancedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385AB2A99020C00B86A65 /* SettingsAdvancedView.swift */; };
+		553385AE2A992DAD00B86A65 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385AD2A992DAD00B86A65 /* AppSettings.swift */; };
+		553385B12A9934FF00B86A65 /* MLocationMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385B02A9934FF00B86A65 /* MLocationMap.swift */; };
+		553385B32A99360300B86A65 /* MTimeZonePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385B22A99360300B86A65 /* MTimeZonePicker.swift */; };
+		553385B52A99378F00B86A65 /* CalculationMethod+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385B42A99378F00B86A65 /* CalculationMethod+Ext.swift */; };
+		553385B92A99386300B86A65 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385B82A99386300B86A65 /* AudioPlayer.swift */; };
+		553385BD2A99392400B86A65 /* MNotificationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385BC2A99392400B86A65 /* MNotificationPicker.swift */; };
+		553385BF2A99666600B86A65 /* MuezzinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385BE2A99666600B86A65 /* MuezzinViewModel.swift */; };
+		553385D12A9B0FEC00B86A65 /* Adhan in Frameworks */ = {isa = PBXBuildFile; productRef = 553385D02A9B0FEC00B86A65 /* Adhan */; };
+		553385D42A9C068300B86A65 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553385D32A9C068300B86A65 /* Sound.swift */; };
 		5570CF692A96E47E00E22FED /* athan3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5570CF682A96E47E00E22FED /* athan3.mp3 */; };
 		5570CF6B2A96EF0800E22FED /* athan4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5570CF6A2A96EF0800E22FED /* athan4.mp3 */; };
-		5570CF6D2A97043300E22FED /* NextPrayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5570CF6C2A97043300E22FED /* NextPrayerView.swift */; };
-		5570CF702A97AF6500E22FED /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5570CF6F2A97AF6500E22FED /* LocationManager.swift */; };
-		55C172CB2A8D2D1D0022367E /* MButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C172CA2A8D2D1D0022367E /* MButtonStyle.swift */; };
 		55C172CF2A8D493E0022367E /* athan1_fajr.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55C172CD2A8D493E0022367E /* athan1_fajr.mp3 */; };
 		55C172D02A8D493E0022367E /* athan1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55C172CE2A8D493E0022367E /* athan1.mp3 */; };
-		55C172D22A8D4B1C0022367E /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C172D12A8D4B1C0022367E /* AudioPlayer.swift */; };
-		55C172D72A8F23DD0022367E /* SettingsGeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C172D62A8F23DD0022367E /* SettingsGeneralView.swift */; };
-		55C172D92A8F25440022367E /* SettingsLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C172D82A8F25440022367E /* SettingsLocationView.swift */; };
-		55C172DB2A8F25670022367E /* SettingsPrayerTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C172DA2A8F25670022367E /* SettingsPrayerTimesView.swift */; };
-		55C172DF2A8F26250022367E /* SettingsAdvancedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C172DE2A8F26250022367E /* SettingsAdvancedView.swift */; };
-		55C172E12A8F27220022367E /* SettingsNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C172E02A8F27220022367E /* SettingsNotificationsView.swift */; };
-		55CE8E3529F9E8C1001948D6 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE8E3429F9E8C1001948D6 /* AppSettings.swift */; };
-		55CE8E3829F9F1CA001948D6 /* CalculationMethod+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE8E3729F9F1CA001948D6 /* CalculationMethod+Ext.swift */; };
-		55CE8E3A29FB4035001948D6 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE8E3929FB4035001948D6 /* SwiftUIView.swift */; };
-		55CE8E3C29FC8C02001948D6 /* MuezzinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE8E3B29FC8C02001948D6 /* MuezzinViewModel.swift */; };
 		55F8BD3529EDA3F9009D0D4D /* MuezzinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8BD3429EDA3F9009D0D4D /* MuezzinApp.swift */; };
-		55F8BD3729EDA3F9009D0D4D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8BD3629EDA3F9009D0D4D /* SettingsView.swift */; };
 		55F8BD3929EDA3FA009D0D4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F8BD3829EDA3FA009D0D4D /* Assets.xcassets */; };
 		55F8BD3C29EDA3FA009D0D4D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F8BD3B29EDA3FA009D0D4D /* Preview Assets.xcassets */; };
-		55F8BD4429F0A996009D0D4D /* MuezzinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8BD4329F0A996009D0D4D /* MuezzinView.swift */; };
-		55F8BD4629F0A9C1009D0D4D /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8BD4529F0A9C1009D0D4D /* DateView.swift */; };
-		55F8BD4829F0A9D3009D0D4D /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8BD4729F0A9D3009D0D4D /* ButtonsView.swift */; };
-		55F8BD4A29F0A9F1009D0D4D /* PrayerTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8BD4929F0A9F1009D0D4D /* PrayerTimesView.swift */; };
-		55F8BD4C29F0AA76009D0D4D /* PrayerTimesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8BD4B29F0AA76009D0D4D /* PrayerTimesCell.swift */; };
-		55F8BD4E29F0AADD009D0D4D /* MButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8BD4D29F0AADD009D0D4D /* MButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		552B73472A95751E001216D2 /* athan2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = athan2.mp3; sourceTree = "<group>"; };
 		552B734B2A9578AF001216D2 /* dua.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dua.mp3; sourceTree = "<group>"; };
-		553385792A97F2FA00B86A65 /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
-		5533857C2A9823DB00B86A65 /* Athan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Athan.swift; sourceTree = "<group>"; };
-		5533857E2A9826F300B86A65 /* PrayerTimesCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimesCell2.swift; sourceTree = "<group>"; };
-		553385842A983B3200B86A65 /* MNotificationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNotificationPicker.swift; sourceTree = "<group>"; };
-		553385862A984C5A00B86A65 /* ReverseGeocodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseGeocodeType.swift; sourceTree = "<group>"; };
-		554C888E2A954AAD00C2B6C7 /* MLocationMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLocationMap.swift; sourceTree = "<group>"; };
+		553385882A9850A100B86A65 /* MuezzinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuezzinView.swift; sourceTree = "<group>"; };
+		5533858A2A9850CC00B86A65 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5533858C2A98514B00B86A65 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		553385932A98530200B86A65 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		553385952A98530A00B86A65 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
+		553385972A98531000B86A65 /* PrayerTimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimesView.swift; sourceTree = "<group>"; };
+		553385992A98531800B86A65 /* NextPrayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPrayerView.swift; sourceTree = "<group>"; };
+		5533859F2A98562E00B86A65 /* MButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MButton.swift; sourceTree = "<group>"; };
+		553385A12A98FEFD00B86A65 /* PrayerTimesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimesCell.swift; sourceTree = "<group>"; };
+		553385A32A9901F400B86A65 /* SettingsGeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGeneralView.swift; sourceTree = "<group>"; };
+		553385A52A9901FA00B86A65 /* SettingsLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLocationView.swift; sourceTree = "<group>"; };
+		553385A72A99020100B86A65 /* SettingsPrayerTimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPrayerTimesView.swift; sourceTree = "<group>"; };
+		553385A92A99020700B86A65 /* SettingsNotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNotificationsView.swift; sourceTree = "<group>"; };
+		553385AB2A99020C00B86A65 /* SettingsAdvancedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAdvancedView.swift; sourceTree = "<group>"; };
+		553385AD2A992DAD00B86A65 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		553385B02A9934FF00B86A65 /* MLocationMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLocationMap.swift; sourceTree = "<group>"; };
+		553385B22A99360300B86A65 /* MTimeZonePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTimeZonePicker.swift; sourceTree = "<group>"; };
+		553385B42A99378F00B86A65 /* CalculationMethod+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalculationMethod+Ext.swift"; sourceTree = "<group>"; };
+		553385B82A99386300B86A65 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		553385BC2A99392400B86A65 /* MNotificationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNotificationPicker.swift; sourceTree = "<group>"; };
+		553385BE2A99666600B86A65 /* MuezzinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuezzinViewModel.swift; sourceTree = "<group>"; };
+		553385D32A9C068300B86A65 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		5570CF682A96E47E00E22FED /* athan3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = athan3.mp3; sourceTree = "<group>"; };
 		5570CF6A2A96EF0800E22FED /* athan4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = athan4.mp3; sourceTree = "<group>"; };
-		5570CF6C2A97043300E22FED /* NextPrayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPrayerView.swift; sourceTree = "<group>"; };
-		5570CF6F2A97AF6500E22FED /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		5570CF712A97C0CC00E22FED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		55C172CA2A8D2D1D0022367E /* MButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MButtonStyle.swift; sourceTree = "<group>"; };
 		55C172CD2A8D493E0022367E /* athan1_fajr.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = athan1_fajr.mp3; sourceTree = "<group>"; };
 		55C172CE2A8D493E0022367E /* athan1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = athan1.mp3; sourceTree = "<group>"; };
-		55C172D12A8D4B1C0022367E /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
-		55C172D62A8F23DD0022367E /* SettingsGeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGeneralView.swift; sourceTree = "<group>"; };
-		55C172D82A8F25440022367E /* SettingsLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLocationView.swift; sourceTree = "<group>"; };
-		55C172DA2A8F25670022367E /* SettingsPrayerTimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPrayerTimesView.swift; sourceTree = "<group>"; };
-		55C172DE2A8F26250022367E /* SettingsAdvancedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAdvancedView.swift; sourceTree = "<group>"; };
-		55C172E02A8F27220022367E /* SettingsNotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNotificationsView.swift; sourceTree = "<group>"; };
-		55CE8E3429F9E8C1001948D6 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
-		55CE8E3729F9F1CA001948D6 /* CalculationMethod+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalculationMethod+Ext.swift"; sourceTree = "<group>"; };
-		55CE8E3929FB4035001948D6 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
-		55CE8E3B29FC8C02001948D6 /* MuezzinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuezzinViewModel.swift; sourceTree = "<group>"; };
 		55F8BD3129EDA3F9009D0D4D /* Muezzin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muezzin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F8BD3429EDA3F9009D0D4D /* MuezzinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuezzinApp.swift; sourceTree = "<group>"; };
-		55F8BD3629EDA3F9009D0D4D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		55F8BD3829EDA3FA009D0D4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55F8BD3B29EDA3FA009D0D4D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		55F8BD3D29EDA3FA009D0D4D /* Muezzin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Muezzin.entitlements; sourceTree = "<group>"; };
-		55F8BD4329F0A996009D0D4D /* MuezzinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuezzinView.swift; sourceTree = "<group>"; };
-		55F8BD4529F0A9C1009D0D4D /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
-		55F8BD4729F0A9D3009D0D4D /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
-		55F8BD4929F0A9F1009D0D4D /* PrayerTimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimesView.swift; sourceTree = "<group>"; };
-		55F8BD4B29F0AA76009D0D4D /* PrayerTimesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimesCell.swift; sourceTree = "<group>"; };
-		55F8BD4D29F0AADD009D0D4D /* MButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,70 +83,89 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				553385782A97E56C00B86A65 /* Adhan in Frameworks */,
+				553385D12A9B0FEC00B86A65 /* Adhan in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5533857B2A9823C800B86A65 /* Enums */ = {
+		5533858E2A9851D500B86A65 /* MenuBarExtra */ = {
 			isa = PBXGroup;
 			children = (
-				5533857C2A9823DB00B86A65 /* Athan.swift */,
-				553385862A984C5A00B86A65 /* ReverseGeocodeType.swift */,
-			);
-			path = Enums;
-			sourceTree = "<group>";
-		};
-		553385822A983A1400B86A65 /* MenuBarExtra */ = {
-			isa = PBXGroup;
-			children = (
-				55CE8E3B29FC8C02001948D6 /* MuezzinViewModel.swift */,
-				55F8BD4329F0A996009D0D4D /* MuezzinView.swift */,
-				55F8BD4529F0A9C1009D0D4D /* DateView.swift */,
-				55F8BD4729F0A9D3009D0D4D /* ButtonsView.swift */,
-				55F8BD4929F0A9F1009D0D4D /* PrayerTimesView.swift */,
-				5570CF6C2A97043300E22FED /* NextPrayerView.swift */,
-				553385832A983A4D00B86A65 /* Custom Components */,
+				553385882A9850A100B86A65 /* MuezzinView.swift */,
+				553385932A98530200B86A65 /* DateView.swift */,
+				553385952A98530A00B86A65 /* ButtonsView.swift */,
+				553385972A98531000B86A65 /* PrayerTimesView.swift */,
+				553385992A98531800B86A65 /* NextPrayerView.swift */,
+				5533859E2A98562300B86A65 /* Custom Components */,
 			);
 			path = MenuBarExtra;
 			sourceTree = "<group>";
 		};
-		553385832A983A4D00B86A65 /* Custom Components */ = {
+		5533858F2A9851DE00B86A65 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				55F8BD4B29F0AA76009D0D4D /* PrayerTimesCell.swift */,
-				5533857E2A9826F300B86A65 /* PrayerTimesCell2.swift */,
-				55F8BD4D29F0AADD009D0D4D /* MButton.swift */,
+				5533858A2A9850CC00B86A65 /* SettingsView.swift */,
+				553385A32A9901F400B86A65 /* SettingsGeneralView.swift */,
+				553385A52A9901FA00B86A65 /* SettingsLocationView.swift */,
+				553385A72A99020100B86A65 /* SettingsPrayerTimesView.swift */,
+				553385A92A99020700B86A65 /* SettingsNotificationsView.swift */,
+				553385AB2A99020C00B86A65 /* SettingsAdvancedView.swift */,
+				553385AF2A9934D000B86A65 /* Custom Components */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		553385902A9851E300B86A65 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				5533858C2A98514B00B86A65 /* AboutView.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		5533859E2A98562300B86A65 /* Custom Components */ = {
+			isa = PBXGroup;
+			children = (
+				553385A12A98FEFD00B86A65 /* PrayerTimesCell.swift */,
+				5533859F2A98562E00B86A65 /* MButton.swift */,
 			);
 			path = "Custom Components";
 			sourceTree = "<group>";
 		};
-		554C888C2A954A7D00C2B6C7 /* Custom Components */ = {
+		553385AF2A9934D000B86A65 /* Custom Components */ = {
 			isa = PBXGroup;
 			children = (
-				554C888E2A954AAD00C2B6C7 /* MLocationMap.swift */,
-				553385842A983B3200B86A65 /* MNotificationPicker.swift */,
+				553385B02A9934FF00B86A65 /* MLocationMap.swift */,
+				553385B22A99360300B86A65 /* MTimeZonePicker.swift */,
+				553385BC2A99392400B86A65 /* MNotificationPicker.swift */,
 			);
 			path = "Custom Components";
 			sourceTree = "<group>";
 		};
-		5570CF6E2A97AF5600E22FED /* Managers */ = {
+		553385B62A99385100B86A65 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				55C172D12A8D4B1C0022367E /* AudioPlayer.swift */,
-				5570CF6F2A97AF6500E22FED /* LocationManager.swift */,
+				553385B42A99378F00B86A65 /* CalculationMethod+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		553385B72A99385800B86A65 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				553385B82A99386300B86A65 /* AudioPlayer.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
 		};
-		55C172C92A8D2D040022367E /* ButtonStyles */ = {
+		553385D22A9C067000B86A65 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
-				55C172CA2A8D2D1D0022367E /* MButtonStyle.swift */,
+				553385D32A9C068300B86A65 /* Sound.swift */,
 			);
-			path = ButtonStyles;
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		55C172CC2A8D49240022367E /* Sounds */ = {
@@ -168,28 +179,6 @@
 				552B734B2A9578AF001216D2 /* dua.mp3 */,
 			);
 			path = Sounds;
-			sourceTree = "<group>";
-		};
-		55C172D52A8F23B80022367E /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				55F8BD3629EDA3F9009D0D4D /* SettingsView.swift */,
-				55C172D62A8F23DD0022367E /* SettingsGeneralView.swift */,
-				55C172D82A8F25440022367E /* SettingsLocationView.swift */,
-				55C172DA2A8F25670022367E /* SettingsPrayerTimesView.swift */,
-				55C172E02A8F27220022367E /* SettingsNotificationsView.swift */,
-				55C172DE2A8F26250022367E /* SettingsAdvancedView.swift */,
-				554C888C2A954A7D00C2B6C7 /* Custom Components */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
-		55CE8E3629F9F1B4001948D6 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				55CE8E3729F9F1CA001948D6 /* CalculationMethod+Ext.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		55F8BD2829EDA3F9009D0D4D = {
@@ -213,15 +202,14 @@
 			children = (
 				5570CF712A97C0CC00E22FED /* Info.plist */,
 				55F8BD3429EDA3F9009D0D4D /* MuezzinApp.swift */,
-				55CE8E3429F9E8C1001948D6 /* AppSettings.swift */,
-				55C172C92A8D2D040022367E /* ButtonStyles */,
-				55CE8E3629F9F1B4001948D6 /* Extensions */,
-				5570CF6E2A97AF5600E22FED /* Managers */,
-				5533857B2A9823C800B86A65 /* Enums */,
-				553385792A97F2FA00B86A65 /* GlobalFunctions.swift */,
-				553385822A983A1400B86A65 /* MenuBarExtra */,
-				55C172D52A8F23B80022367E /* Settings */,
-				55CE8E3929FB4035001948D6 /* SwiftUIView.swift */,
+				553385BE2A99666600B86A65 /* MuezzinViewModel.swift */,
+				553385AD2A992DAD00B86A65 /* AppSettings.swift */,
+				553385D22A9C067000B86A65 /* Enums */,
+				553385B72A99385800B86A65 /* Managers */,
+				553385B62A99385100B86A65 /* Extensions */,
+				5533858E2A9851D500B86A65 /* MenuBarExtra */,
+				5533858F2A9851DE00B86A65 /* Settings */,
+				553385902A9851E300B86A65 /* Misc */,
 				55C172CC2A8D49240022367E /* Sounds */,
 				55F8BD3829EDA3FA009D0D4D /* Assets.xcassets */,
 				55F8BD3D29EDA3FA009D0D4D /* Muezzin.entitlements */,
@@ -255,7 +243,7 @@
 			);
 			name = Muezzin;
 			packageProductDependencies = (
-				553385772A97E56C00B86A65 /* Adhan */,
+				553385D02A9B0FEC00B86A65 /* Adhan */,
 			);
 			productName = Muezzin;
 			productReference = 55F8BD3129EDA3F9009D0D4D /* Muezzin.app */;
@@ -286,7 +274,7 @@
 			);
 			mainGroup = 55F8BD2829EDA3F9009D0D4D;
 			packageReferences = (
-				553385762A97E56C00B86A65 /* XCRemoteSwiftPackageReference "adhan-swift" */,
+				553385CF2A9B0FEC00B86A65 /* XCRemoteSwiftPackageReference "adhan-swift" */,
 			);
 			productRefGroup = 55F8BD3229EDA3F9009D0D4D /* Products */;
 			projectDirPath = "";
@@ -320,33 +308,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55CE8E3829F9F1CA001948D6 /* CalculationMethod+Ext.swift in Sources */,
-				55F8BD4A29F0A9F1009D0D4D /* PrayerTimesView.swift in Sources */,
-				55CE8E3A29FB4035001948D6 /* SwiftUIView.swift in Sources */,
-				55CE8E3C29FC8C02001948D6 /* MuezzinViewModel.swift in Sources */,
-				55F8BD4E29F0AADD009D0D4D /* MButton.swift in Sources */,
-				55F8BD4429F0A996009D0D4D /* MuezzinView.swift in Sources */,
-				55F8BD4829F0A9D3009D0D4D /* ButtonsView.swift in Sources */,
-				5570CF6D2A97043300E22FED /* NextPrayerView.swift in Sources */,
-				55C172CB2A8D2D1D0022367E /* MButtonStyle.swift in Sources */,
-				55F8BD3729EDA3F9009D0D4D /* SettingsView.swift in Sources */,
-				553385852A983B3200B86A65 /* MNotificationPicker.swift in Sources */,
-				55F8BD4629F0A9C1009D0D4D /* DateView.swift in Sources */,
-				55C172D92A8F25440022367E /* SettingsLocationView.swift in Sources */,
-				55C172D72A8F23DD0022367E /* SettingsGeneralView.swift in Sources */,
-				554C888F2A954AAD00C2B6C7 /* MLocationMap.swift in Sources */,
-				5570CF702A97AF6500E22FED /* LocationManager.swift in Sources */,
-				5533857F2A9826F300B86A65 /* PrayerTimesCell2.swift in Sources */,
-				5533857A2A97F2FB00B86A65 /* GlobalFunctions.swift in Sources */,
-				55C172E12A8F27220022367E /* SettingsNotificationsView.swift in Sources */,
-				55CE8E3529F9E8C1001948D6 /* AppSettings.swift in Sources */,
-				5533857D2A9823DB00B86A65 /* Athan.swift in Sources */,
+				553385D42A9C068300B86A65 /* Sound.swift in Sources */,
+				553385962A98530A00B86A65 /* ButtonsView.swift in Sources */,
+				553385B12A9934FF00B86A65 /* MLocationMap.swift in Sources */,
+				553385A22A98FEFD00B86A65 /* PrayerTimesCell.swift in Sources */,
+				553385A62A9901FA00B86A65 /* SettingsLocationView.swift in Sources */,
+				553385942A98530200B86A65 /* DateView.swift in Sources */,
+				5533858D2A98514B00B86A65 /* AboutView.swift in Sources */,
+				553385A82A99020100B86A65 /* SettingsPrayerTimesView.swift in Sources */,
+				5533858B2A9850CC00B86A65 /* SettingsView.swift in Sources */,
+				553385B32A99360300B86A65 /* MTimeZonePicker.swift in Sources */,
+				553385AC2A99020C00B86A65 /* SettingsAdvancedView.swift in Sources */,
+				553385B52A99378F00B86A65 /* CalculationMethod+Ext.swift in Sources */,
+				553385BF2A99666600B86A65 /* MuezzinViewModel.swift in Sources */,
+				5533859A2A98531800B86A65 /* NextPrayerView.swift in Sources */,
+				553385AA2A99020700B86A65 /* SettingsNotificationsView.swift in Sources */,
+				553385982A98531000B86A65 /* PrayerTimesView.swift in Sources */,
+				553385A02A98562E00B86A65 /* MButton.swift in Sources */,
 				55F8BD3529EDA3F9009D0D4D /* MuezzinApp.swift in Sources */,
-				553385872A984C5A00B86A65 /* ReverseGeocodeType.swift in Sources */,
-				55C172DF2A8F26250022367E /* SettingsAdvancedView.swift in Sources */,
-				55F8BD4C29F0AA76009D0D4D /* PrayerTimesCell.swift in Sources */,
-				55C172DB2A8F25670022367E /* SettingsPrayerTimesView.swift in Sources */,
-				55C172D22A8D4B1C0022367E /* AudioPlayer.swift in Sources */,
+				553385A42A9901F400B86A65 /* SettingsGeneralView.swift in Sources */,
+				553385892A9850A100B86A65 /* MuezzinView.swift in Sources */,
+				553385AE2A992DAD00B86A65 /* AppSettings.swift in Sources */,
+				553385BD2A99392400B86A65 /* MNotificationPicker.swift in Sources */,
+				553385B92A99386300B86A65 /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,7 +552,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		553385762A97E56C00B86A65 /* XCRemoteSwiftPackageReference "adhan-swift" */ = {
+		553385CF2A9B0FEC00B86A65 /* XCRemoteSwiftPackageReference "adhan-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/batoulapps/adhan-swift";
 			requirement = {
@@ -579,9 +563,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		553385772A97E56C00B86A65 /* Adhan */ = {
+		553385D02A9B0FEC00B86A65 /* Adhan */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 553385762A97E56C00B86A65 /* XCRemoteSwiftPackageReference "adhan-swift" */;
+			package = 553385CF2A9B0FEC00B86A65 /* XCRemoteSwiftPackageReference "adhan-swift" */;
 			productName = Adhan;
 		};
 /* End XCSwiftPackageProductDependency section */

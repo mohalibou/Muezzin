@@ -2,7 +2,7 @@
 //  CalculationMethod+Ext.swift
 //  Muezzin
 //
-//  Created by Mohamed Ali Boutaleb on 4/26/23.
+//  Created by Mohamed Ali Boutaleb on 8/25/23.
 //
 
 import Adhan

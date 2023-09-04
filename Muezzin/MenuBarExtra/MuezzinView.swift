@@ -2,15 +2,12 @@
 //  MuezzinView.swift
 //  Muezzin
 //
-//  Created by Mohamed Ali Boutaleb on 4/19/23.
+//  Created by Mohamed Ali Boutaleb on 8/24/23.
 //
 
 import SwiftUI
 
 struct MuezzinView: View {
-    
-    @StateObject private var vm = MuezzinViewModel()
-    
     var body: some View {
         VStack(spacing: 12) {
             HStack(spacing: 12) {
@@ -22,7 +19,7 @@ struct MuezzinView: View {
                 }
             }
             GroupBox {
-                PrayerTimesView(vm: vm)
+                PrayerTimesView()
             }
             GroupBox {
                 NextPrayerView()
@@ -32,8 +29,6 @@ struct MuezzinView: View {
     }
 }
 
-struct MuezzinView_Previews: PreviewProvider {
-    static var previews: some View {
-        MuezzinView()
-    }
+#Preview {
+    MuezzinView()
 }

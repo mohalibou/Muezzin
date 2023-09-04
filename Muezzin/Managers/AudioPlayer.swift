@@ -2,7 +2,7 @@
 //  AudioPlayer.swift
 //  Muezzin
 //
-//  Created by Mohamed Ali Boutaleb on 8/16/23.
+//  Created by Mohamed Ali Boutaleb on 8/25/23.
 //
 
 import AVFoundation
@@ -10,15 +10,16 @@ import SwiftUI
 
 class AudioPlayer: NSObject, ObservableObject {
     private var player: AVAudioPlayer?
-    @Published var audio: String? {
+    @Published var audio: Sound? {
         didSet {
             setupPlayer()
         }
     }
+    @Published var nextAudio: Sound?
     @Published var isPlaying: Bool = false
     
     func setupPlayer() {
-        if let path = Bundle.main.path(forResource: audio, ofType: "mp3") {
+        if let path = Bundle.main.path(forResource: audio?.rawValue, ofType: "mp3") {
             let url = URL(fileURLWithPath: path)
             do {
                 player = try AVAudioPlayer(contentsOf: url)
@@ -46,6 +47,12 @@ extension AudioPlayer: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if flag {
             isPlaying = false
+            // Check if there's a next audio to play
+            if let next = nextAudio {
+                audio = next
+                play()
+                nextAudio = nil // Reset nextAudio after playing
+            }
         }
     }
 }

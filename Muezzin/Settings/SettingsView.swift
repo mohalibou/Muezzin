@@ -1,12 +1,11 @@
 //
-//  ContentView.swift
+//  SettingsView.swift
 //  Muezzin
 //
-//  Created by Mohamed Ali Boutaleb on 4/17/23.
+//  Created by Mohamed Ali Boutaleb on 8/24/23.
 //
 
 import SwiftUI
-import Adhan
 
 struct SettingsView: View {
     var body: some View {
@@ -27,11 +26,5 @@ struct SettingsView: View {
                 .tabItem { Label("Advanced", systemImage: "wrench.and.screwdriver.fill") }
         }
         .frame(width: 400, height: 450)
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
     }
 }

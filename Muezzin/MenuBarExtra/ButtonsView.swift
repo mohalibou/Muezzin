@@ -2,33 +2,24 @@
 //  ButtonsView.swift
 //  Muezzin
 //
-//  Created by Mohamed Ali Boutaleb on 4/19/23.
+//  Created by Mohamed Ali Boutaleb on 8/24/23.
 //
 
 import SwiftUI
 
 struct ButtonsView: View {
-    
-    @Environment(\.openWindow) var openWindow
-    @Environment(\.dismiss) var dismiss
-    
     var body: some View {
-        VStack {
-            HStack {
-                SettingsLink().buttonStyle(MButtonStyle())
-                MButton(icon: "calendar") { print("You pressed the Calendar button.") }
-            }
-            HStack {
-                MButton(icon: "info.circle") { NSApp.activate(ignoringOtherApps: true); openWindow(id: "about") }
-                MButton(icon: "power") { NSApplication.shared.terminate(self) }
-            }
+        LazyVGrid(columns: [GridItem](repeating: GridItem(.flexible(), spacing: 4), count: 2), spacing: 4) {
+            SettingsLink().buttonStyle(MButtonStyle())
+            MButton(icon: "calendar") { print("You have pressed the calendar button.") }
+            MButton(icon: "info.circle") { print("You have pressed the about button.") }
+            MButton(icon: "power") { print("You have pressed the power button.") }
         }
-        .frame(maxWidth: 83, maxHeight: .infinity)
+        .padding(4)
+        .frame(width: 80, height: 80)
     }
 }
 
-struct ButtonsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ButtonsView()
-    }
+#Preview {
+    ButtonsView()
 }

@@ -10,70 +10,43 @@ import SwiftUI
 @main
 struct MuezzinApp: App {
     
-    @StateObject private var settings = AppSettings.shared
-    var locationManager = LocationManager()
+    @StateObject private var vm = MuezzinViewModel()
+    
+    let timer1 = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    let timer2 = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     
     var body: some Scene {
         MenuBarExtra {
             MuezzinView()
-                .environmentObject(locationManager)
+                .environmentObject(vm)
                 
         } label: {
-            HStack {
-                if settings.displayIcon {
-                    Image(systemName: "person")
+            menuBarLabel
+                .onReceive(timer1) { _ in
+                    vm.checkIfItsTime()
                 }
-                if settings.displayNextPrayer {
-                    Text("Hello")
+                .onReceive(timer2) { _ in
+                    vm.getIslamicDate()
+                    vm.getPrayerTimes()
                 }
-            }
-            .onAppear {
-                locationManager.checkIfLocationServicesIsEnabled()
-            }
         }
         .menuBarExtraStyle(.window)
         
         Settings {
             SettingsView()
-                .environmentObject(locationManager)
+                .environmentObject(vm)
         }
         
-        
         Window("", id: "about") {
-            VStack {
-                Text("Hello")
-            }
-            .frame(width: 284, height: 100)
-            .onReceive(NotificationCenter.default.publisher(for: NSApplication.willUpdateNotification), perform: { _ in
-                for window in NSApplication.shared.windows {
-                    window.standardWindowButton(.miniaturizeButton)?.isEnabled = false
-                    window.standardWindowButton(.zoomButton)?.isEnabled = false
-                }
-            })
+            AboutView()
         }
         .windowResizability(.contentSize)
     }
+    
+    var menuBarLabel: some View {
+        HStack {
+            Image("kaaba")
+            Text(vm.next)
+        }
+    }
 }
-
-/*
- HStack {
- let configuration = NSImage.SymbolConfiguration(pointSize: 16, weight: .light)
- .applying(.init(hierarchicalColor: .red))
- 
- let image = NSImage(systemSymbolName: "moon.stars.fill", accessibilityDescription: nil)!
- .withSymbolConfiguration(configuration)
- 
- let attributedText = NSAttributedString(string: "Muezzin", attributes: [.foregroundColor: Color.green])
- 
- let myString = " Fajr 4:54"
- let myAttribute = [ NSAttributedString.Key.foregroundColor: NSColor.blue ]
- let myAttrString = NSAttributedString(string: myString, attributes: myAttribute)
- 
- Label {
- Text(AttributedString(myAttrString)).foregroundStyle(.red, .green)
- } icon: {
- Image(nsImage: image!)
- }
- .labelStyle(.titleAndIcon)
- 
- }*/

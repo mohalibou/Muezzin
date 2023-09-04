@@ -2,10 +2,11 @@
 //  AppSettings.swift
 //  Muezzin
 //
-//  Created by Mohamed Ali Boutaleb on 4/26/23.
+//  Created by Mohamed Ali Boutaleb on 8/25/23.
 //
 
 import Adhan
+import CoreLocation
 import SwiftUI
 
 final class AppSettings: ObservableObject {
@@ -17,7 +18,14 @@ final class AppSettings: ObservableObject {
     @AppStorage("startAtLogin") var startAtLogin: Bool = false
     @AppStorage("displayIcon") var displayIcon: Bool = true
     @AppStorage("displayNextPrayer") var displayNextPrayer: Bool = true
+    @AppStorage("prayerTime") var prayerTime: String = "time"
+    @AppStorage("prayerName") var prayerName: String = "full"
     
+    // Location Settings
+    //@AppStorage("useCurrentLocation") var useCurrentLocation: Bool = false
+    @AppStorage("customLocationLatitude") var customLocationLatitude: Double = 0
+    @AppStorage("customLocationLongitude") var customLocationLongitude: Double = 0
+    @AppStorage("customTimeZone") var customTimeZone: String = TimeZone.current.identifier
     
     // Prayer Times Settings
     @AppStorage("calculationMethod") var calculationMethod: CalculationMethod = .moonsightingCommittee
@@ -25,11 +33,10 @@ final class AppSettings: ObservableObject {
     
     // Notifications Settings
     @AppStorage("silentMode") var silentMode: Bool = false
-    @AppStorage("fajr") var fajr: String = "athan1_fajr"
-    @AppStorage("duhr") var duhr: String = "athan1"
-    @AppStorage("asr") var asr: String = "athan2"
-    @AppStorage("maghrib") var maghrib: String = "athan3"
-    @AppStorage("isha") var isha: String = "athan4"
+    @AppStorage("fajrAthan") var fajrAthan: Sound = .athan1Fajr
+    @AppStorage("duhrAthan") var duhrAthan: Sound = .athan1
+    @AppStorage("asrAthan") var asrAthan: Sound = .athan1
+    @AppStorage("maghribAthan") var maghribAthan: Sound = .athan1
+    @AppStorage("ishaAthan") var ishaAthan: Sound = .athan1
     @AppStorage("playDuaAfterAthan") var playDuaAfterAthan: Bool = false
 }
-

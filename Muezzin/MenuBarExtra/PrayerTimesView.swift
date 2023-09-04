@@ -2,52 +2,35 @@
 //  PrayerTimesView.swift
 //  Muezzin
 //
-//  Created by Mohamed Ali Boutaleb on 4/19/23.
+//  Created by Mohamed Ali Boutaleb on 8/24/23.
 //
 
-import Adhan
 import SwiftUI
 
 struct PrayerTimesView: View {
     
-    @EnvironmentObject private var locationManager: LocationManager
-    @StateObject private var settings = AppSettings.shared
-    @ObservedObject var vm: MuezzinViewModel
-    
-    var fajrTime: String {
-        let timeZone: String = reverseGeocode(for: .timezone, location: locationManager.coordinates) { _ in }
-        
-        
-        
-        vm.getTodayPrayerTimes(coords: locationManager.coordinates, calcMethod: settings.calculationMethod, madhab: settings.asrCalculation, timeZone: reverseGeocode()[0]
-    }
-    var duhrTime: String {
-        vm.getTodayPrayerTimes(coords: locationManager.coordinates, calcMethod: settings.calculationMethod, madhab: settings.asrCalculation, timeZone: "America/Los_Angeles")[1]
-    }
-    var asrTime: String {
-        vm.getTodayPrayerTimes(coords: locationManager.coordinates, calcMethod: settings.calculationMethod, madhab: settings.asrCalculation, timeZone: "America/Los_Angeles")[2]
-    }
-    var maghribTime: String {
-        vm.getTodayPrayerTimes(coords: locationManager.coordinates, calcMethod: settings.calculationMethod, madhab: settings.asrCalculation, timeZone: "America/Los_Angeles")[3]
-    }
-    var ishaTime: String {
-        vm.getTodayPrayerTimes(coords: locationManager.coordinates, calcMethod: settings.calculationMethod, madhab: settings.asrCalculation, timeZone: "America/Los_Angeles")[4]
-    }
+    @EnvironmentObject var vm: MuezzinViewModel
     
     var body: some View {
         VStack {
-            PrayerTimesCell(name: "Fajr", time: fajrTime, notification: settings.$fajr)
-                .padding(.top, 3)
+            PrayerTimesCell(prayer: "Fajr", time: $vm.fajr)
             Divider()
-            PrayerTimesCell(name: "Duhr", time: duhrTime, notification: settings.$duhr)
+            PrayerTimesCell(prayer: "Sunrise", time: $vm.sunrise)
             Divider()
-            PrayerTimesCell(name: "Asr", time: asrTime, notification: settings.$asr)
+            PrayerTimesCell(prayer: "Duhr", time: $vm.duhr)
             Divider()
-            PrayerTimesCell(name: "Maghrib", time: maghribTime, notification: settings.$maghrib)
+            PrayerTimesCell(prayer: "Asr", time: $vm.asr)
             Divider()
-            PrayerTimesCell(name: "Isha", time: ishaTime, notification: settings.$isha)
-                .padding(.bottom, 3)
+            PrayerTimesCell(prayer: "Maghrib", time: $vm.maghrib)
+            Divider()
+            PrayerTimesCell(prayer: "Isha", time: $vm.isha)
         }
+        .padding(.vertical, 3)
         .padding(.horizontal, 6)
+        .frame(maxWidth: .infinity)
     }
+}
+
+#Preview {
+    PrayerTimesView()
 }
