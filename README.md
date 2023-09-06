@@ -17,6 +17,8 @@ A modern, simple application designed to get athan times.
 
 ### Images:
 <p float="left">
-  <img src="" width="250">
-  <img src="" width="250">
+  <img src="image1.png" width="250">
+  <img src="image2.png" width="250">
+  <img src="image3.png" width="250">
+  <img src="image4.png" width="250">
 </p>
