@@ -1,6 +1,6 @@
 # Muezzin
 
-A modern, simple application designed to get athan times.
+A modern, simple macOS menu bar application designed to get athan times.
 
 ### Frameworks:
 - SwiftUI
