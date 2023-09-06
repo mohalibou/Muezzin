@@ -17,8 +17,8 @@ A modern, simple macOS menu bar application designed to get athan times.
 
 ### Images:
 <p float="left">
-  <img src="image1.png" width="250">
-  <img src="image2.png" width="250">
-  <img src="image3.png" width="250">
-  <img src="image4.png" width="250">
+  <img src="image1.png" height="250">
+  <img src="image2.png" height="250">
+  <img src="image3.png" height="250">
+  <img src="image4.png" height="250">
 </p>
