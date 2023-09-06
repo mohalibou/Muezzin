@@ -6,6 +6,7 @@
 //
 
 import Adhan
+import CoreLocation
 import SwiftUI
 
 class MuezzinViewModel: ObservableObject {
@@ -13,15 +14,20 @@ class MuezzinViewModel: ObservableObject {
     @Published var audioPlayer = AudioPlayer()
     @Published var islamicDate = (day: "", month: "", year: "")
     
-    @Published var fajr = (time: Date(), isItTime: false)
-    @Published var sunrise = (time: Date(), isItTime: false)
-    @Published var duhr = (time: Date(), isItTime: false)
-    @Published var asr = (time: Date(), isItTime: false)
-    @Published var maghrib = (time: Date(), isItTime: false)
-    @Published var isha = (time: Date(), isItTime: false)
-    @Published var tomorrowFajr = (time: Date(), isItTime: false)
+    @Published var fajrTime = Date()
+    @Published var sunriseTime = Date()
+    @Published var duhrTime = Date()
+    @Published var asrTime = Date()
+    @Published var maghribTime = Date()
+    @Published var ishaTime = Date()
+    @Published var tomorrowFajrTime = Date()
     
-    @Published var next = (icon: "", time: "")
+    @Published var location = ""
+    
+    @Published var whichPrayerIsItTimeFor: String = ""
+    @Published var current: Prayer = .fajr
+    @Published var next: (icon: String, time: String) = ("", "")
+    
     
     var settings = AppSettings.shared
     
@@ -71,13 +77,15 @@ class MuezzinViewModel: ObservableObject {
         if let todaysPrayers = PrayerTimes(coordinates: coords, date: today, calculationParameters: params), 
             let tomorrowsPrayers = PrayerTimes(coordinates: coords, date: tomorrow, calculationParameters: params) {
             
-            fajr.time = todaysPrayers.fajr
-            sunrise.time = todaysPrayers.sunrise
-            duhr.time = todaysPrayers.dhuhr
-            asr.time = todaysPrayers.asr
-            maghrib.time = todaysPrayers.maghrib
-            isha.time = todaysPrayers.isha
-            tomorrowFajr.time = tomorrowsPrayers.fajr
+            fajrTime = todaysPrayers.fajr
+            sunriseTime = todaysPrayers.sunrise
+            duhrTime = todaysPrayers.dhuhr
+            asrTime = todaysPrayers.asr
+            maghribTime = todaysPrayers.maghrib
+            ishaTime = todaysPrayers.isha
+            tomorrowFajrTime = tomorrowsPrayers.fajr
+            
+            current = todaysPrayers.currentPrayer()!
             
             let nextPrayer = todaysPrayers.nextPrayer()
             let countdown = todaysPrayers.time(for: nextPrayer ?? .dhuhr)
@@ -85,25 +93,25 @@ class MuezzinViewModel: ObservableObject {
             switch nextPrayer {
             case .fajr:
                 next.icon = "light.max"
-                next.time = "\(formatPrayerName("Isha")) \(formatPrayerTime(fajr.time, countdown))"
+                next.time = "\(formatPrayerName("Isha")) \(formatPrayerTime(fajrTime, countdown))"
             case .sunrise:
                 next.icon = "sunrise.fill"
-                next.time = "\(formatPrayerName("Sunrise")) \(formatPrayerTime(sunrise.time, countdown))"
+                next.time = "\(formatPrayerName("Sunrise")) \(formatPrayerTime(sunriseTime, countdown))"
             case .dhuhr:
                 next.icon = "sun.max.fill"
-                next.time = "\(formatPrayerName("Duhr")) \(formatPrayerTime(duhr.time, countdown))"
+                next.time = "\(formatPrayerName("Duhr")) \(formatPrayerTime(duhrTime, countdown))"
             case .asr:
                 next.icon = "sun.min.fill"
-                next.time = "\(formatPrayerName("Asr")) \(formatPrayerTime(asr.time, countdown))"
+                next.time = "\(formatPrayerName("Asr")) \(formatPrayerTime(asrTime, countdown))"
             case .maghrib:
                 next.icon = "sunset.fill"
-                next.time = "\(formatPrayerName("Maghrib")) \(formatPrayerTime(maghrib.time, countdown))"
+                next.time = "\(formatPrayerName("Maghrib")) \(formatPrayerTime(maghribTime, countdown))"
             case .isha:
                 next.icon = "moon.stars.fill"
-                next.time = "\(formatPrayerName("Isha")) \(formatPrayerTime(isha.time, countdown))"
+                next.time = "\(formatPrayerName("Isha")) \(formatPrayerTime(ishaTime, countdown))"
             case .none:
                 next.icon = "light.max"
-                next.time = "\(formatPrayerName("Fajr")) \(formatPrayerTime(tomorrowFajr.time, countdown))"
+                next.time = "\(formatPrayerName("Fajr")) \(formatPrayerTime(tomorrowFajrTime, countdown))"
             }
             
             if let sunnahs = SunnahTimes(from: todaysPrayers) {
@@ -116,12 +124,12 @@ class MuezzinViewModel: ObservableObject {
     
     func checkIfItsTime() {
         
-        let prayers = [formatterMedium.string(from: fajr.time),
-                       formatterMedium.string(from: sunrise.time),
-                       formatterMedium.string(from: duhr.time),
-                       formatterMedium.string(from: asr.time),
-                       formatterMedium.string(from: maghrib.time),
-                       formatterMedium.string(from: isha.time)]
+        let prayers = [formatterMedium.string(from: fajrTime),
+                       formatterMedium.string(from: sunriseTime),
+                       formatterMedium.string(from: duhrTime),
+                       formatterMedium.string(from: asrTime),
+                       formatterMedium.string(from: maghribTime),
+                       formatterMedium.string(from: ishaTime)]
         
         let currentTime = formatterMedium.string(from: Date())
         
@@ -140,47 +148,35 @@ class MuezzinViewModel: ObservableObject {
             switch index {
             case 0:
                 print("It's time for Fajr.")
-                fajr.isItTime = true
-                if settings.fajrAthan != Sound.none {
+                whichPrayerIsItTimeFor = "Fajr"
+                if settings.fajrAthan != Sound.none && !settings.silentMode {
                     playAthan(sound: settings.fajrAthan)
-                } else {
-                    fajr.isItTime = false
                 }
             case 1:
                 print("It's time for Sunrise.")
-                sunrise.isItTime = true
-                sunrise.isItTime = false
             case 2:
                 print("It's time for Duhr.")
-                duhr.isItTime = true
-                if settings.duhrAthan != Sound.none {
+                whichPrayerIsItTimeFor = "Duhr"
+                if settings.duhrAthan != Sound.none && !settings.silentMode {
                     playAthan(sound: settings.duhrAthan)
-                } else {
-                    duhr.isItTime = false
                 }
             case 3:
                 print("It's time for Asr.")
-                asr.isItTime = true
-                if settings.asrAthan != Sound.none {
+                whichPrayerIsItTimeFor = "Asr"
+                if settings.asrAthan != Sound.none && !settings.silentMode {
                     playAthan(sound: settings.asrAthan)
-                } else {
-                    asr.isItTime = false
                 }
             case 4:
                 print("It's time for Maghrib.")
-                maghrib.isItTime = true
-                if settings.maghribAthan != Sound.none {
+                whichPrayerIsItTimeFor = "Maghrib"
+                if settings.maghribAthan != Sound.none && !settings.silentMode {
                     playAthan(sound: settings.maghribAthan)
-                } else {
-                    maghrib.isItTime = false
                 }
             case 5:
                 print("It's time for Isha.")
-                isha.isItTime = true
-                if settings.ishaAthan != Sound.none {
+                whichPrayerIsItTimeFor = "Isha"
+                if settings.ishaAthan != Sound.none && !settings.silentMode {
                     playAthan(sound: settings.ishaAthan)
-                } else {
-                    isha.isItTime = false
                 }
             default:
                 print("Unknown prayer time.")
@@ -190,6 +186,20 @@ class MuezzinViewModel: ObservableObject {
     
     func getMonthlyTimes() {
         
+    }
+    
+    func getLocationName() {
+        let locationToGeocode = CLLocation(latitude: settings.customLocationLatitude, longitude: settings.customLocationLongitude)
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(locationToGeocode) { (placemarks, error) in
+            if let placemark = placemarks?.first, let city = placemark.locality, let state = placemark.administrativeArea {
+                self.location = city == state ? "\(city)" : "\(city), \(state)"
+            } else if let placemark = placemarks?.first, let state = placemark.administrativeArea {
+                self.location = "\(state)"
+            } else {
+                self.location = "Unknown"
+            }
+        }
     }
     
     private func playAthan(sound: Sound) {

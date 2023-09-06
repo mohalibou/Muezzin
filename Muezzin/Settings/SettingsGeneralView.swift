@@ -5,16 +5,19 @@
 //  Created by Mohamed Ali Boutaleb on 8/25/23.
 //
 
+import LaunchAtLogin
 import SwiftUI
 
 struct SettingsGeneralView: View {
     
     @StateObject private var settings = AppSettings.shared
     
+    
     var body: some View {
         Form {
             Section {
-                Toggle("Start Muezzin at login", isOn: settings.$startAtLogin)
+                LaunchAtLogin.Toggle("Start Muezzin at login")
+                //Toggle("Start Muezzin at login", isOn: settings.$startAtLogin)
                 
                 Toggle("Display icon in menu bar", isOn: settings.$displayIcon)
                     .onChange(of: settings.displayIcon) { toggle(settings.$displayNextPrayer) }

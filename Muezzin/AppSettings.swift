@@ -15,7 +15,6 @@ final class AppSettings: ObservableObject {
     private init() { }
     
     // General Settings
-    @AppStorage("startAtLogin") var startAtLogin: Bool = false
     @AppStorage("displayIcon") var displayIcon: Bool = true
     @AppStorage("displayNextPrayer") var displayNextPrayer: Bool = true
     @AppStorage("prayerName") var prayerName: Name = .full

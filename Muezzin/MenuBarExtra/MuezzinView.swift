@@ -22,7 +22,7 @@ struct MuezzinView: View {
                 PrayerTimesView()
             }
             GroupBox {
-                NextPrayerView()
+                LocationNameView()
             }
         }
         .padding(12)

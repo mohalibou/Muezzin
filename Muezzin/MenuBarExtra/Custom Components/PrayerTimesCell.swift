@@ -13,7 +13,7 @@ struct PrayerTimesCell: View {
     @EnvironmentObject var vm: MuezzinViewModel
     
     var prayer: String
-    @Binding var time: (time: Date, isItTime: Bool)
+    @Binding var time: Date
     
     var image: String {
         switch prayer {
@@ -54,7 +54,9 @@ struct PrayerTimesCell: View {
     }
     
     var notifIcon: (name: String, color: Color) {
-        if time.isItTime && vm.audioPlayer.isPlaying {
+        if prayer == "Sunrise" {
+            return ("", .primary)
+        } else if prayer == vm.whichPrayerIsItTimeFor && vm.audioPlayer.isPlaying {
             return ("pause.fill", .accentColor)
         } else {
             switch athanSound {
@@ -69,9 +71,9 @@ struct PrayerTimesCell: View {
     var body: some View {
         LabeledContent {
             Spacer()
-            Text(vm.formatter.string(from: time.time))
+            Text(vm.formatter.string(from: time))
             //Text(time.time.formatted(date: .omitted, time: .shortened))
-            notifButton
+            !settings.silentMode ? notifButton : nil
         } label: {
             HStack {
                 Image(systemName: image)
@@ -87,7 +89,7 @@ struct PrayerTimesCell: View {
     var notifButton: some View {
         Button {
             if vm.audioPlayer.isPlaying {
-                time.isItTime = false
+                vm.whichPrayerIsItTimeFor = ""
                 vm.audioPlayer.stop()
             } else {
                 toggle()
