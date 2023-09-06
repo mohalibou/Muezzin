@@ -46,8 +46,23 @@ struct MuezzinApp: App {
     
     var menuBarLabel: some View {
         HStack {
-            settings.displayIcon ? Image(systemName: vm.next.icon) : nil
-            settings.displayNextPrayer ? Text(vm.next.time) : nil
+            let configuration = NSImage.SymbolConfiguration(pointSize: 16, weight: .light)
+                .applying(.init(hierarchicalColor: .red))
+            
+            let image = NSImage(systemSymbolName: vm.next.icon, accessibilityDescription: nil)
+            let updateImage = image?.withSymbolConfiguration(configuration)
+            
+            //Image(nsImage: updateImage!)
+            
+            if settings.displayIcon {
+                Image(systemName: vm.next.icon)
+            }
+            if settings.displayNextPrayer {
+                Text(vm.next.time)
+            }
+            
+            //AttributedText(menubarStringValue: "Hello")
         }
     }
 }
+

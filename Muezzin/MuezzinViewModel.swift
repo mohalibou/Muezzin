@@ -80,7 +80,7 @@ class MuezzinViewModel: ObservableObject {
             tomorrowFajr.time = tomorrowsPrayers.fajr
             
             let nextPrayer = todaysPrayers.nextPrayer()
-            let countdown = todaysPrayers.time(for: nextPrayer!)
+            let countdown = todaysPrayers.time(for: nextPrayer ?? .dhuhr)
             
             switch nextPrayer {
             case .fajr:
@@ -123,7 +123,7 @@ class MuezzinViewModel: ObservableObject {
                        formatterMedium.string(from: maghrib.time),
                        formatterMedium.string(from: isha.time)]
         
-        let currentTime = Date().formatted(date: .omitted, time: .standard)
+        let currentTime = formatterMedium.string(from: Date())
         
         print("------------------------")
         print("\(prayers[0]) - Fajr")

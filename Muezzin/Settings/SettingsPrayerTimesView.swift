@@ -30,12 +30,12 @@ struct SettingsPrayerTimesView: View {
                     Text("Hanafi").tag(Madhab.hanafi)
                 }
             }
-            
+            /*
             Section {
                 Toggle("Show sunrise time", isOn: $showSunriseTime)
                 Toggle("Show midnight time", isOn: $showMidnightTime)
                 Toggle("Show tahajjud time", isOn: $showTahajjudTime)
-            }
+            }*/
         }
         .formStyle(.grouped)
     }

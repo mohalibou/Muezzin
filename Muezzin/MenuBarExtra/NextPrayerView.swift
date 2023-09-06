@@ -10,7 +10,7 @@ import SwiftUI
 struct NextPrayerView: View {
     var body: some View {
         VStack {
-            Text("Hello")
+            AttributedText(menubarStringValue: "example")
         }
         .frame(maxWidth: .infinity)
     }
@@ -18,4 +18,29 @@ struct NextPrayerView: View {
 
 #Preview {
     NextPrayerView()
+}
+
+struct AttributedText: NSViewRepresentable {
+    
+    var menubarStringValue: String
+    
+    func makeNSView(context: Context) -> NSTextField {
+        let textField = NSTextField()
+        textField.isEditable = false
+        textField.isBordered = false
+        textField.backgroundColor = .clear
+        return textField
+    }
+    
+    func updateNSView(_ nsView: NSTextField, context: Context) {
+        if #available(OSX 10.15, *) {
+            let attributes = [NSAttributedString.Key.font: NSFont.monospacedSystemFont(ofSize: 12, weight: .medium)]
+            let attrString = NSAttributedString(string: menubarStringValue, attributes: attributes)
+            nsView.attributedStringValue = attrString
+        } else {
+            let attributes = [NSAttributedString.Key.font: NSFont(name: "Monaco", size: 12) ?? NSFont.systemFont(ofSize: 12)]
+            let attrString = NSAttributedString(string: menubarStringValue, attributes: attributes)
+            nsView.attributedStringValue = attrString
+        }
+    }
 }
