@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct ButtonsView: View {
+    
+    @Environment(\.openWindow) var openWindow
+    
     var body: some View {
         LazyVGrid(columns: [GridItem](repeating: GridItem(.flexible(), spacing: 4), count: 2), spacing: 4) {
             SettingsLink().buttonStyle(MButtonStyle())
             MButton(icon: "calendar") { print("You have pressed the calendar button.") }
-            MButton(icon: "info.circle") { print("You have pressed the about button.") }
+            MButton(icon: "info.circle") { openWindow(id: "about") }
             MButton(icon: "power") { print("You have pressed the power button.") }
         }
         .padding(4)
