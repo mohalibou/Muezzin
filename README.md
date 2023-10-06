@@ -1,4 +1,4 @@
-<img align="left" height="100" src="icon.png">  
+<img align="left" height="80" src="icon.png">  
 
 # Muezzin
 
