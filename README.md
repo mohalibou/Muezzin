@@ -1,7 +1,5 @@
 <img align="left" width="100" height="100" src="icon.png">  
 
-# Extractor
-
 # Muezzin
 
 A modern, simple macOS menu bar application designed to get athan times.
